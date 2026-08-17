@@ -8,8 +8,7 @@
 .service-card h2{font-size:1.5rem;letter-spacing:-.02em;margin:16px 0 10px}
 .service-card p{font-size:.95rem;margin:0 0 24px}
 .service-card a{text-transform:uppercase;letter-spacing:.05em;color:var(--ink)}
-.about-story{grid-template-columns:minmax(0,1.45fr) minmax(250px,.55fr)}
-@media(max-width:800px){.about-story{grid-template-columns:1fr}}
+.about-story{display:grid;grid-template-columns:1fr;gap:52px}.about-story .list{max-width:760px}
 .eyebrow{font-weight:900}
 .strip{background:#e4f04a}
 .btn-primary{background:#e4f04a;color:#101112}
