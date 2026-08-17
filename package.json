@@ -1,0 +1,8 @@
+{
+  "name": "secure-scaffolding-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": { "dev": "astro dev", "build": "astro build", "preview": "astro preview" },
+  "dependencies": { "@astrojs/cloudflare": "^12.6.0", "astro": "^5.12.0" }
+}

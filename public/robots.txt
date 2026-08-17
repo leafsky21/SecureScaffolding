@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.securescaffolding.com.au/sitemap-index.xml

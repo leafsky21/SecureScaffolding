@@ -1,0 +1,5 @@
+---
+import Base from '../layouts/Base.astro'; import PageHeader from '../components/PageHeader.astro';
+const clients=['Grindley Construction Pty Ltd','Red Eye Constructions','Prime Constructions Pty Ltd','Freecity Group','Nationwide Oil Pty Ltd','Rudder Homes','Hines Constructions','DJ Thompson Pty Ltd','James Clifford Constructions Pty Ltd','Dreambuild','Adco Constructions Pty Ltd','Crystal Pools Pty Ltd','BlueScope Steel Limited','Abode Constructions (NSW) Pty Ltd','Yisheng Construction'];
+---
+<Base title="Clients | Secure Scaffolding" description="A selection of builders, contractors and industry leaders who have worked with Secure Scaffolding." current="clients"><main><PageHeader eyebrow="Selected clients" title="Good company, good work." intro="Our reputation has been built project by project, alongside teams who value reliability and care." /><section class="section" style="padding-top:0"><div class="wrap"><div class="client-grid">{clients.map(client=><div class="client">{client}</div>)}</div></div></section></main></Base>
