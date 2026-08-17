@@ -2,6 +2,11 @@
 .trust-bar{background:#171a1c;color:#fff;border-bottom:1px solid #31363a;font-size:.75rem;letter-spacing:.04em}.trust-bar-inner{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;padding:9px 0}.trust-bar strong{color:#e4f04a}
 .hero h1,.section h2,.project-hero h1,.page-title,.service-card h2,.global-cta h2{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.025em;line-height:1.06}
 .hero h1{font-size:clamp(2.8rem,6vw,5.4rem)}
+.service-cards{gap:20px}
+.service-card{padding:32px 28px;border-top:4px solid var(--lime);display:flex;flex-direction:column;justify-content:space-between}
+.service-card h2{font-size:1.5rem;letter-spacing:-.02em;margin:16px 0 10px}
+.service-card p{font-size:.95rem;margin:0 0 24px}
+.service-card a{text-transform:uppercase;letter-spacing:.05em;color:var(--ink)}
 .eyebrow{font-weight:900}
 .strip{background:#e4f04a}
 .btn-primary{background:#e4f04a;color:#101112}

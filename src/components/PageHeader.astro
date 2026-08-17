@@ -1,6 +1,5 @@
 ---
 import BusinessSchema from './BusinessSchema.astro';
-import TrustBar from './TrustBar.astro';
 const { eyebrow, title, intro } = Astro.props;
 ---
-<BusinessSchema /><TrustBar /><section class="section"><div class="wrap section-head"><div><div class="eyebrow">{eyebrow}</div><h1>{title}</h1></div>{intro && <p class="lead">{intro}</p>}</div></section>
+<BusinessSchema /><section class="section"><div class="wrap section-head"><div><div class="eyebrow">{eyebrow}</div><h1>{title}</h1></div>{intro && <p class="lead">{intro}</p>}</div></section>
