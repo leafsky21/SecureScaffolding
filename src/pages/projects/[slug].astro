@@ -1,0 +1,6 @@
+---
+import Base from '../../layouts/Base.astro'; import { projects } from '../../data/projects';
+export function getStaticPaths(){ return projects.map(project=>({params:{slug:project.slug},props:{project}})); }
+const { project } = Astro.props;
+---
+<Base title={`${project.title} | Secure Scaffolding`} description={`${project.title}: ${project.category} project supported by Secure Scaffolding in ${project.location}.`}><main><section class="project-hero"><div class="wrap project-hero-grid"><div><a class="eyebrow back-link" href="/projects">← All projects</a><h1>{project.title}</h1><p class="project-meta">{project.location} · {project.category}</p><p class="lead">{project.description}</p><a class="btn btn-primary" href="/contact">Discuss your project ↗</a></div><img src={project.image} alt={project.title} /></div></section><section class="section"><div class="wrap split"><div><div class="eyebrow">Services delivered</div><h2>Access that keeps work moving.</h2></div><div class="list">{project.services.map((service,index)=><div class="list-row"><span style="color:#98ab22;font-weight:900">0{index+1}</span><strong>{service}</strong></div>)}</div></div></section></main></Base>

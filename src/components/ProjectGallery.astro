@@ -8,4 +8,4 @@ const projects = [
   { image: '/projects/royal-north-shore.jpg', title: 'Royal North Shore Hospital', detail: 'Health infrastructure' }
 ];
 ---
-<div class="project-gallery">{projects.map((project, index) => <figure class:list={{ 'project-feature': index === 0 || index === 3 }}><img src={project.image} alt={project.title} loading={index > 1 ? 'lazy' : undefined} /><figcaption><strong>{project.title}</strong><span>{project.detail}</span></figcaption></figure>)}</div>
+<div class="project-gallery">{projects.map((project, index) => <a href={`/projects/${project.title.toLowerCase().replaceAll(' ', '-').replaceAll('—', '-')}`} class:list={{ 'project-feature': index === 0 || index === 3 }}><figure><img src={project.image} alt={project.title} loading={index > 1 ? 'lazy' : undefined} /><figcaption><strong>{project.title}</strong><span>{project.detail} ↗</span></figcaption></figure></a>)}</div>

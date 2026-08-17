@@ -1,0 +1,4 @@
+---
+import Base from '../../layouts/Base.astro'; import PageHeader from '../../components/PageHeader.astro'; import { projects } from '../../data/projects';
+---
+<Base title="Projects | Secure Scaffolding" description="Selected scaffolding and access projects delivered by Secure Scaffolding across NSW." current="projects"><main><PageHeader eyebrow="Selected work" title="A track record you can see." intro="Explore a selection of infrastructure, commercial, residential and health projects supported by our team." /><section class="section" style="padding-top:0"><div class="wrap"><div class="project-gallery">{projects.map((project,index)=><a class:list={{'project-feature':index===0||index===3}} href={`/projects/${project.slug}`}><figure><img src={project.image} alt={project.title} loading={index>1?'lazy':undefined} /><figcaption><strong>{project.title}</strong><span>{project.category} ↗</span></figcaption></figure></a>)}</div></div></section></main></Base>
