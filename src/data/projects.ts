@@ -7,3 +7,15 @@ export const projects = [
   { slug: 'royal-north-shore-hospital', title: 'Royal North Shore Hospital', location: 'St Leonards, NSW', category: 'Health infrastructure', image: '/projects/royal-north-shore.jpg', description: 'Professional access support for health infrastructure projects, with planning that respects active operational environments.', services: ['Scaffolding hire', 'Installation', 'Transport'] },
   { slug: 'prime-bluescope-erskine-park', title: 'Prime Constructions for BlueScope', location: '25–55 Templar Road, Erskine Park NSW', category: 'Steel manufacturing facility', image: '/projects/prime-bluescope-erskine-park/IMG_6327.jpg', images: ['/projects/prime-bluescope-erskine-park/IMG_6327.jpg','/projects/prime-bluescope-erskine-park/IMG_6592.jpg','/projects/prime-bluescope-erskine-park/IMG_6597.jpg','/projects/prime-bluescope-erskine-park/IMG_6598.jpg','/projects/prime-bluescope-erskine-park/IMG_6599.jpg','/projects/prime-bluescope-erskine-park/IMG_6610.jpg','/projects/prime-bluescope-erskine-park/IMG_6611.jpg','/projects/prime-bluescope-erskine-park/IMG_6612.jpg'], description: 'Engineer-certified scaffolding design and installation services for Prime Constructions at the BlueScope steel factory at 25–55 Templar Road, Erskine Park.', services: ['Scaffolding design', 'Engineer-certified installation', 'Scaffolding hire', 'Transport'] }
 ];
+
+const uploadDates: Record<string, string> = {
+  'paterson-creek-bridge': '2025-01-15',
+  'barge-rozelle': '2025-02-10',
+  prospect: '2025-03-05',
+  'hawkesbury-river-bridge': '2025-04-20',
+  'scenic-world-katoomba': '2025-05-12',
+  'royal-north-shore-hospital': '2025-06-18',
+  'prime-bluescope-erskine-park': '2026-08-17'
+};
+
+export const sortedProjects = [...projects].sort((a, b) => new Date(uploadDates[b.slug]).getTime() - new Date(uploadDates[a.slug]).getTime());
