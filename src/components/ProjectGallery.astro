@@ -1,0 +1,11 @@
+---
+const projects = [
+  { image: '/projects/paterson-creek.jpg', title: 'Paterson Creek Bridge', detail: 'Infrastructure access' },
+  { image: '/projects/barge-rozelle.jpg', title: 'Barge Rozelle', detail: 'Marine and civil works' },
+  { image: '/projects/prospect.jpg', title: 'Prospect', detail: 'Residential and commercial' },
+  { image: '/projects/hawkesbury-bridge.jpg', title: 'Hawkesbury River Bridge', detail: 'Major infrastructure' },
+  { image: '/projects/scenic-world.jpg', title: 'Scenic World Katoomba', detail: 'Complex site access' },
+  { image: '/projects/royal-north-shore.jpg', title: 'Royal North Shore Hospital', detail: 'Health infrastructure' }
+];
+---
+<div class="project-gallery">{projects.map((project, index) => <figure class:list={{ 'project-feature': index === 0 || index === 3 }}><img src={project.image} alt={project.title} loading={index > 1 ? 'lazy' : undefined} /><figcaption><strong>{project.title}</strong><span>{project.detail}</span></figcaption></figure>)}</div>
