@@ -1,4 +1,5 @@
 ---
+import BusinessSchema from './BusinessSchema.astro';
 const { eyebrow, title, intro } = Astro.props;
 ---
-<section class="section"><div class="wrap section-head"><div><div class="eyebrow">{eyebrow}</div><h1>{title}</h1></div>{intro && <p class="lead">{intro}</p>}</div></section>
+<BusinessSchema /><section class="section"><div class="wrap section-head"><div><div class="eyebrow">{eyebrow}</div><h1>{title}</h1></div>{intro && <p class="lead">{intro}</p>}</div></section>
