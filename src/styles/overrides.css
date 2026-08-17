@@ -6,10 +6,10 @@
 .section:not(.band)+.section:not(.band){background:#fff}
 .service-card,.client-card,.form{box-shadow:0 8px 24px rgba(16,17,18,.04)}
 .hero-art:after{content:'SCAFFOLD HIRE  /  DESIGN + CERTIFICATION  /  INSTALLATION'}
-.service-cards{gap:20px}
+.service-cards{gap:20px;margin-top:72px}
 .service-cards{row-gap:28px;align-items:stretch}
 .service-card{padding:32px 28px;border-top:4px solid var(--lime);display:flex;flex-direction:column;justify-content:space-between;min-height:240px;height:100%}
-.project-gallery{row-gap:28px}
+.project-gallery{row-gap:28px;margin-top:72px}
 .service-card h2{font-size:1.5rem;letter-spacing:-.02em;margin:16px 0 10px}
 .service-card p{font-size:.95rem;margin:0 0 24px}
 .service-card a{text-transform:uppercase;letter-spacing:.05em;color:var(--ink)}
