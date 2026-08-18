@@ -15,6 +15,7 @@
 .service-card a{text-transform:uppercase;letter-spacing:.05em;color:var(--ink)}
 .about-story{display:grid;grid-template-columns:1fr;gap:52px}.about-story .lead{max-width:none}.about-story .list{max-width:760px}body:has(.about-story) .section-head{display:block;margin-bottom:0}body:has(.about-story) .section-head .lead{max-width:900px;margin-top:24px}body:has(.about-story) .section:has(.section-head){padding-bottom:28px}
 .about-contact{background:#fff}.about-contact-details p{color:var(--muted);margin:0 0 20px}.about-contact-details strong{display:block;color:var(--ink);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}.about-contact-details a:not(.btn){font-weight:700}
+body:has(.about-contact) main{display:flex;flex-direction:column}body:has(.about-contact) main>.page-header-section{order:1}body:has(.about-contact) main>section:has(.about-story){order:2}body:has(.about-contact) main>section.band{order:3}body:has(.about-contact) main>.about-contact{order:4}
 .eyebrow{font-weight:900}
 .strip{background:#e4f04a}
 .btn-primary{background:#e4f04a;color:#101112}
