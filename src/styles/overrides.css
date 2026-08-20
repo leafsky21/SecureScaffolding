@@ -1,7 +1,7 @@
 .hero-art{background-image:linear-gradient(135deg,rgba(16,17,18,.18),rgba(16,17,18,.48)),url('https://static.wixstatic.com/media/1b626a_2927cee2327d4ecb8835cd797dc35b40~mv2_d_3264_2448_s_4_2.jpg/v1/fill/w_1000,h_800,al_c,q_85/1b626a_2927cee2327d4ecb8835cd797dc35b40~mv2_d_3264_2448_s_4_2.jpg');}
 .trust-bar{background:#171a1c;color:#fff;border-bottom:1px solid #31363a;font-size:.75rem;letter-spacing:.04em}.trust-bar-inner{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;padding:9px 0}.trust-bar strong{color:#e4f04a}
 .hero h1,.section h2,.project-hero h1,.page-title,.service-card h2,.global-cta h2{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:800;letter-spacing:-.025em;line-height:1.06}
-.hero h1{font-size:clamp(2.8rem,6vw,5.4rem)}
+.hero h1{font-size:clamp(2.5rem,5vw,4.4rem);max-width:640px}
 .page-header-section{background:var(--ink);color:#fff;padding-top:72px;padding-bottom:64px}.page-header-section .eyebrow{color:var(--lime)}.page-header-section .lead{color:#c8ced0}.page-header-section h1{max-width:760px}
 .section:not(.band)+.section:not(.band){background:#fff}
 .service-card,.client-card,.form{box-shadow:0 8px 24px rgba(16,17,18,.04)}
