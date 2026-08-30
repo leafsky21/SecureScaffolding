@@ -27,7 +27,7 @@ body:has(.about-contact) main{display:flex;flex-direction:column}body:has(.about
 html,body,main{width:100%;min-width:0}
 body{overflow-x:hidden}
 @media(max-width:800px){
-  main,.hero,.strip,.section,.page-header-section,.project-hero{width:100%;max-width:100%;}
+  main,.hero,.strip,.section,.page-header-section,.project-hero{width:100vw;max-width:100vw;}
   .hero-grid,.split,.contact-grid,.project-hero-grid{min-width:0;}
   .hero-grid > *, .split > *, .contact-grid > *, .project-hero-grid > *{min-width:0;}
   .hero p,.lead{overflow-wrap:anywhere;}
