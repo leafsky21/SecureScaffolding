@@ -29,6 +29,8 @@ body{overflow-x:hidden}
 body > main{display:block;width:100vw;max-width:none;min-width:0;margin:0}
 body:has(.hero) > main,body:has(.about-story) > main{width:100vw;max-width:none;}
 body:has(.hero) .hero,body:has(.about-story) .page-header-section,body:has(.about-story) .section{width:100vw;max-width:none;}
+body:has(.hero) > main,body:has(.about-story) > main{display:block!important;position:relative;left:0;right:auto;flex:none;align-self:stretch;}
+body:has(.hero) > main > .hero,body:has(.about-story) > main > .page-header-section,body:has(.about-story) > main > .section{display:block!important;position:relative;left:0;right:auto;}
 @media(max-width:800px){
   main,.hero,.strip,.section,.page-header-section,.project-hero{width:100vw;max-width:none;}
   .hero-grid,.split,.contact-grid,.project-hero-grid{min-width:0;}
