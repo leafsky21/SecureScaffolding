@@ -13,9 +13,8 @@
 .service-card h2{font-size:1.5rem;letter-spacing:-.02em;margin:16px 0 10px}
 .service-card p{font-size:.95rem;margin:0 0 24px}
 .service-card a{text-transform:uppercase;letter-spacing:.05em;color:var(--ink)}
-.about-story{display:grid;grid-template-columns:1fr;gap:52px}.about-story .lead{max-width:none}.about-story .list{max-width:760px}body:has(.about-story) .section-head{display:block;margin-bottom:0}body:has(.about-story) .section-head .lead{max-width:900px;margin-top:24px}body:has(.about-story) .section:has(.section-head){padding-bottom:28px}
+.about-story{display:grid;grid-template-columns:1fr;gap:52px}.about-story .lead{max-width:none}.about-story .list{max-width:760px}.about-contact~.band .section-head{display:block;margin-bottom:0}.about-contact~.band .section-head .lead{max-width:900px;margin-top:24px}.about-contact~.band{padding-bottom:28px}
 .about-contact{background:#fff}.about-contact-details p{color:var(--muted);margin:0 0 20px}.about-contact-details strong{display:block;color:var(--ink);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}.about-contact-details a:not(.btn){font-weight:700}
-body:has(.about-contact) main{display:flex;flex-direction:column}body:has(.about-contact) main>.page-header-section{order:1}body:has(.about-contact) main>section:has(.about-story){order:2}body:has(.about-contact) main>section.band{order:3}body:has(.about-contact) main>.about-contact{order:4}
 .eyebrow{font-weight:900}
 .strip{background:#e4f04a}
 .btn-primary{background:#e4f04a;color:#101112}
@@ -23,17 +22,16 @@ body:has(.about-contact) main{display:flex;flex-direction:column}body:has(.about
 .card,.service-card,.client-card{border-top:3px solid #e4f04a}
 .global-cta{display:flex;align-items:center;justify-content:space-between;gap:32px;margin:70px 0 10px;padding:34px;border-radius:18px;background:#171a1c;color:#fff}.global-cta h2{max-width:680px;margin:8px 0;font-size:clamp(1.8rem,4vw,3.4rem);line-height:1}.global-cta p{color:#c8ced0;margin:0}.global-cta .eyebrow{color:#e4f04a}@media(max-width:700px){.global-cta{display:block}.global-cta .btn{margin-top:24px;width:100%}}
 
-/* Keep the document and every primary content region fluid on narrow viewports. */
-html,body{width:100%;min-width:100%;margin:0;padding:0}
-body{overflow-x:hidden}
-body > main{display:block;width:100vw;max-width:none;min-width:0;margin:0}
-body:has(.hero) > main,body:has(.about-story) > main{width:100vw;max-width:none;}
-body:has(.hero) .hero,body:has(.about-story) .page-header-section,body:has(.about-story) .section{width:100vw;max-width:none;}
-body:has(.hero) > main,body:has(.about-story) > main{display:block!important;position:relative;left:0;right:auto;flex:none;align-self:stretch;}
-body:has(.hero) > main > .hero,body:has(.about-story) > main > .page-header-section,body:has(.about-story) > main > .section{display:block!important;position:relative;left:0;right:auto;}
+/* Keep mobile sizing stable while Safari finishes parsing the page. */
+html{width:100%;max-width:100%;margin:0;padding:0;overflow-x:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{width:100%;max-width:100%;min-width:0;margin:0;padding:0;overflow-x:hidden}
+main{display:block;width:100%;max-width:100%;min-width:0;margin:0;overflow-x:hidden}
 @media(max-width:800px){
-  main,.hero,.strip,.section,.page-header-section,.project-hero{width:100vw;max-width:none;}
+  main,.hero,.strip,.section,.page-header-section,.project-hero{width:100%;max-width:100%;}
   .hero-grid,.split,.contact-grid,.project-hero-grid{min-width:0;}
   .hero-grid > *, .split > *, .contact-grid > *, .project-hero-grid > *{min-width:0;}
   .hero p,.lead{overflow-wrap:anywhere;}
+  .hero-art:after{left:12px;right:12px;max-width:calc(100% - 24px);border-radius:20px;overflow-wrap:anywhere;}
+  .project-gallery,.project-gallery-wrap,.about-story,.about-story > *{min-width:0;max-width:100%;}
+  .list-row span{min-width:0;text-align:right;overflow-wrap:anywhere;}
 }
