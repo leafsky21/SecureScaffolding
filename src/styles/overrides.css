@@ -22,3 +22,13 @@ body:has(.about-contact) main{display:flex;flex-direction:column}body:has(.about
 .band{background:#171a1c}
 .card,.service-card,.client-card{border-top:3px solid #e4f04a}
 .global-cta{display:flex;align-items:center;justify-content:space-between;gap:32px;margin:70px 0 10px;padding:34px;border-radius:18px;background:#171a1c;color:#fff}.global-cta h2{max-width:680px;margin:8px 0;font-size:clamp(1.8rem,4vw,3.4rem);line-height:1}.global-cta p{color:#c8ced0;margin:0}.global-cta .eyebrow{color:#e4f04a}@media(max-width:700px){.global-cta{display:block}.global-cta .btn{margin-top:24px;width:100%}}
+
+/* Keep the document and every primary content region fluid on narrow viewports. */
+html,body,main{width:100%;min-width:0}
+body{overflow-x:hidden}
+@media(max-width:800px){
+  main,.hero,.strip,.section,.page-header-section,.project-hero{width:100%;max-width:100%;}
+  .hero-grid,.split,.contact-grid,.project-hero-grid{min-width:0;}
+  .hero-grid > *, .split > *, .contact-grid > *, .project-hero-grid > *{min-width:0;}
+  .hero p,.lead{overflow-wrap:anywhere;}
+}
