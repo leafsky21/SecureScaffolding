@@ -9,7 +9,7 @@ export const projects = [
     slug: 'mount-st-benedict-college-public-stair-access',
     title: 'Public Access Stairs — Mount St Benedict College',
     location: 'Mount St Benedict College, NSW',
-    category: 'Public access stairs',
+    category: 'Premium public access stairs',
     image: '/projects/mount-st-benedict-college/IMG_4220.jpeg',
     images: [
       '/projects/mount-st-benedict-college/IMG_4220.jpeg',
@@ -19,8 +19,8 @@ export const projects = [
       '/projects/mount-st-benedict-college/IMG_4222.jpeg',
       '/projects/mount-st-benedict-college/IMG_4226.jpeg'
     ],
-    description: 'Secure Scaffolding delivered purpose-built temporary public access stairs for teachers and students at Mount St Benedict College. Designed for high pedestrian traffic in a school environment, the installation incorporated compliant stair geometry and clear widths, generous landings, continuous handrails and guardrails, slip-resistant flooring and high-visibility step nosings. This is a public access solution aligned with the National Construction Code and applicable Australian Standards—not a conventional stretcher stair intended only for construction workers.',
-    services: ['Public access stair design', 'NCC and Australian Standards compliance', 'High-traffic pedestrian access', 'Scaffold-supported installation']
+    description: 'Secure Scaffolding delivered a premium-quality, purpose-built temporary public access stair product for teachers and students at Mount St Benedict College. Designed for high pedestrian traffic in a school environment, the installation incorporated compliant stair geometry and clear widths, generous landings, continuous handrails and guardrails, slip-resistant flooring and high-visibility step nosings. This premium public access solution is aligned with the National Construction Code and applicable Australian Standards—not a conventional stretcher stair intended only for construction workers.',
+    services: ['Premium public access stair system', 'NCC and Australian Standards compliance', 'High-traffic pedestrian access', 'Scaffold-supported installation']
   },
   { slug: 'prime-bluescope-erskine-park', title: 'Prime Constructions for BlueScope', location: '25–55 Templar Road, Erskine Park NSW', category: 'Steel manufacturing facility', image: '/projects/prime-bluescope-erskine-park/IMG_6327.jpg', images: ['/projects/prime-bluescope-erskine-park/IMG_6327.jpg','/projects/prime-bluescope-erskine-park/IMG_6592.jpg','/projects/prime-bluescope-erskine-park/IMG_6597.jpg','/projects/prime-bluescope-erskine-park/IMG_6598.jpg','/projects/prime-bluescope-erskine-park/IMG_6599.jpg','/projects/prime-bluescope-erskine-park/IMG_6610.jpg','/projects/prime-bluescope-erskine-park/IMG_6611.jpg','/projects/prime-bluescope-erskine-park/IMG_6612.jpg'], description: 'Engineer-certified scaffolding design and installation services for Prime Constructions at the BlueScope steel factory at 25–55 Templar Road, Erskine Park.', services: ['Scaffolding design', 'Engineer-certified installation', 'Scaffolding hire', 'Transport'] }
 ];
