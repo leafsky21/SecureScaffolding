@@ -7,20 +7,20 @@ export const projects = [
   { slug: 'royal-north-shore-hospital', title: 'Royal North Shore Hospital', location: 'St Leonards, NSW', category: 'Health infrastructure', image: '/projects/royal-north-shore.jpg', description: 'Professional access support for health infrastructure projects, with planning that respects active operational environments.', services: ['Scaffolding hire', 'Installation', 'Transport'] },
   {
     slug: 'mount-st-benedict-college-public-stair-access',
-    title: 'Mount St Benedict College Public Stair Access',
+    title: 'Public Access Stairs — Mount St Benedict College',
     location: 'Mount St Benedict College, NSW',
-    category: 'Compliant public access system',
+    category: 'Public access stairs',
     image: '/projects/mount-st-benedict-college/IMG_4220.jpeg',
     images: [
       '/projects/mount-st-benedict-college/IMG_4220.jpeg',
-      '/projects/mount-st-benedict-college/IMG_4224.jpeg',
       '/projects/mount-st-benedict-college/IMG_4243.jpeg',
+      '/projects/mount-st-benedict-college/IMG_4224.jpeg',
       '/projects/mount-st-benedict-college/IMG_4223.jpeg',
-      '/projects/mount-st-benedict-college/IMG_4226.jpeg',
-      '/projects/mount-st-benedict-college/IMG_4222.jpeg'
+      '/projects/mount-st-benedict-college/IMG_4222.jpeg',
+      '/projects/mount-st-benedict-college/IMG_4226.jpeg'
     ],
-    description: 'A purpose-built public stair access system for teachers and students at Mount St Benedict College. This was not a standard stretcher stair intended only for construction personnel: the access was configured to comply with applicable public-access requirements, including generous stair and landing widths, continuous handrails, edge protection, slip-resistant surfaces and high-visibility step nosings.',
-    services: ['Public-access stair system', 'Public-access compliance', 'Scaffold-supported installation', 'Site access coordination']
+    description: 'Secure Scaffolding delivered purpose-built temporary public access stairs for teachers and students at Mount St Benedict College. Designed for high pedestrian traffic in a school environment, the installation incorporated compliant stair geometry and clear widths, generous landings, continuous handrails and guardrails, slip-resistant flooring and high-visibility step nosings. This is a public access solution aligned with the National Construction Code and applicable Australian Standards—not a conventional stretcher stair intended only for construction workers.',
+    services: ['Public access stair design', 'NCC and Australian Standards compliance', 'High-traffic pedestrian access', 'Scaffold-supported installation']
   },
   { slug: 'prime-bluescope-erskine-park', title: 'Prime Constructions for BlueScope', location: '25–55 Templar Road, Erskine Park NSW', category: 'Steel manufacturing facility', image: '/projects/prime-bluescope-erskine-park/IMG_6327.jpg', images: ['/projects/prime-bluescope-erskine-park/IMG_6327.jpg','/projects/prime-bluescope-erskine-park/IMG_6592.jpg','/projects/prime-bluescope-erskine-park/IMG_6597.jpg','/projects/prime-bluescope-erskine-park/IMG_6598.jpg','/projects/prime-bluescope-erskine-park/IMG_6599.jpg','/projects/prime-bluescope-erskine-park/IMG_6610.jpg','/projects/prime-bluescope-erskine-park/IMG_6611.jpg','/projects/prime-bluescope-erskine-park/IMG_6612.jpg'], description: 'Engineer-certified scaffolding design and installation services for Prime Constructions at the BlueScope steel factory at 25–55 Templar Road, Erskine Park.', services: ['Scaffolding design', 'Engineer-certified installation', 'Scaffolding hire', 'Transport'] }
 ];
