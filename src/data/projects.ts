@@ -5,6 +5,23 @@ export const projects = [
   { slug: 'hawkesbury-river-bridge', title: 'Hawkesbury River Bridge', location: 'Hawkesbury, NSW', category: 'Major infrastructure', image: '/projects/hawkesbury-bridge.jpg', description: 'Scaffolding support for major infrastructure work where safe access, coordination and dependable delivery are critical.', services: ['Scaffolding installation', 'Transport', 'Consulting engineering'] },
   { slug: 'scenic-world-katoomba', title: 'Scenic World Katoomba', location: 'Blue Mountains, NSW', category: 'Complex site access', image: '/projects/scenic-world.jpg', description: 'Carefully coordinated access for work in a complex, high-traffic Blue Mountains environment.', services: ['Scaffolding hire', 'Installation', 'Design support'] },
   { slug: 'royal-north-shore-hospital', title: 'Royal North Shore Hospital', location: 'St Leonards, NSW', category: 'Health infrastructure', image: '/projects/royal-north-shore.jpg', description: 'Professional access support for health infrastructure projects, with planning that respects active operational environments.', services: ['Scaffolding hire', 'Installation', 'Transport'] },
+  {
+    slug: 'mount-st-benedict-college-public-stair-access',
+    title: 'Mount St Benedict College Public Stair Access',
+    location: 'Mount St Benedict College, NSW',
+    category: 'Compliant public access system',
+    image: '/projects/mount-st-benedict-college/IMG_4220.jpeg',
+    images: [
+      '/projects/mount-st-benedict-college/IMG_4220.jpeg',
+      '/projects/mount-st-benedict-college/IMG_4224.jpeg',
+      '/projects/mount-st-benedict-college/IMG_4243.jpeg',
+      '/projects/mount-st-benedict-college/IMG_4223.jpeg',
+      '/projects/mount-st-benedict-college/IMG_4226.jpeg',
+      '/projects/mount-st-benedict-college/IMG_4222.jpeg'
+    ],
+    description: 'A purpose-built public stair access system for teachers and students at Mount St Benedict College. This was not a standard stretcher stair intended only for construction personnel: the access was configured to comply with applicable public-access requirements, including generous stair and landing widths, continuous handrails, edge protection, slip-resistant surfaces and high-visibility step nosings.',
+    services: ['Public-access stair system', 'Public-access compliance', 'Scaffold-supported installation', 'Site access coordination']
+  },
   { slug: 'prime-bluescope-erskine-park', title: 'Prime Constructions for BlueScope', location: '25–55 Templar Road, Erskine Park NSW', category: 'Steel manufacturing facility', image: '/projects/prime-bluescope-erskine-park/IMG_6327.jpg', images: ['/projects/prime-bluescope-erskine-park/IMG_6327.jpg','/projects/prime-bluescope-erskine-park/IMG_6592.jpg','/projects/prime-bluescope-erskine-park/IMG_6597.jpg','/projects/prime-bluescope-erskine-park/IMG_6598.jpg','/projects/prime-bluescope-erskine-park/IMG_6599.jpg','/projects/prime-bluescope-erskine-park/IMG_6610.jpg','/projects/prime-bluescope-erskine-park/IMG_6611.jpg','/projects/prime-bluescope-erskine-park/IMG_6612.jpg'], description: 'Engineer-certified scaffolding design and installation services for Prime Constructions at the BlueScope steel factory at 25–55 Templar Road, Erskine Park.', services: ['Scaffolding design', 'Engineer-certified installation', 'Scaffolding hire', 'Transport'] }
 ];
 
@@ -15,6 +32,7 @@ const uploadDates: Record<string, string> = {
   'hawkesbury-river-bridge': '2025-04-20',
   'scenic-world-katoomba': '2025-05-12',
   'royal-north-shore-hospital': '2025-06-18',
+  'mount-st-benedict-college-public-stair-access': '2026-10-12',
   'prime-bluescope-erskine-park': '2026-08-17'
 };
 
