@@ -1,8 +1,32 @@
 export const projects = [
-  { slug: 'paterson-creek-bridge', title: 'Paterson Creek Bridge', location: 'NSW', category: 'Infrastructure access', image: '/projects/paterson-creek.jpg', description: 'Reliable access support for bridge and infrastructure works, planned around demanding site conditions and active construction programs.', services: ['Scaffolding installation', 'Transport', 'Design support'] },
+  {
+    slug: 'paterson-creek-bridge',
+    title: 'Under-Bridge Scaffolding — Paterson Creek Bridge',
+    location: 'NSW',
+    category: 'Under-bridge access scaffolding',
+    seoTitle: 'Under-Bridge Scaffolding NSW | Paterson Creek Bridge',
+    seoDescription: 'Specialist under-bridge scaffolding and working-platform access installed around Paterson Creek Bridge for safe, practical infrastructure access in NSW.',
+    image: '/projects/paterson-creek.jpg',
+    imageAlts: ['Under-bridge scaffolding and working-platform access installed along Paterson Creek Bridge in NSW'],
+    servicesTitle: 'Specialist access beneath and alongside bridge structures.',
+    description: 'Secure Scaffolding supplied and installed specialist under-bridge scaffolding at Paterson Creek Bridge in NSW. The scaffold system created safe working-platform access beneath and alongside the steel bridge structure, supporting crews around difficult spans, piers and elevated work areas. This bridge access solution demonstrates our capability in complex infrastructure scaffolding where conventional ground-based access is limited.',
+    services: ['Under-bridge scaffold access', 'Working-platform installation', 'Transport', 'Design support']
+  },
   { slug: 'barge-rozelle', title: 'Barge Rozelle', location: 'Rozelle, NSW', category: 'Marine and civil works', image: '/projects/barge-rozelle.jpg', description: 'Practical scaffold access for marine and civil works, helping crews work safely around complex structures and changing site conditions.', services: ['Scaffolding hire', 'Installation', 'Transport'] },
   { slug: 'prospect', title: 'Prospect', location: 'Western Sydney', category: 'Residential and commercial', image: '/projects/prospect.jpg', description: 'Flexible access solutions for construction teams working across residential and commercial projects in Western Sydney.', services: ['Scaffolding hire', 'Installation', 'Labour'] },
-  { slug: 'hawkesbury-river-bridge', title: 'Hawkesbury River Bridge', location: 'Hawkesbury, NSW', category: 'Major infrastructure', image: '/projects/hawkesbury-bridge.jpg', description: 'Scaffolding support for major infrastructure work where safe access, coordination and dependable delivery are critical.', services: ['Scaffolding installation', 'Transport', 'Consulting engineering'] },
+  {
+    slug: 'hawkesbury-river-bridge',
+    title: 'Bridge Access Scaffolding — Hawkesbury River Bridge',
+    location: 'Hawkesbury, NSW',
+    category: 'Bridge and infrastructure scaffolding',
+    seoTitle: 'Bridge Access Scaffolding Sydney | Hawkesbury River',
+    seoDescription: 'Engineered bridge access scaffolding above water for the Hawkesbury River Bridge, supporting safe underdeck access for complex infrastructure work.',
+    image: '/projects/hawkesbury-bridge.jpg',
+    imageAlts: ['Underdeck bridge access scaffolding above water at Hawkesbury River Bridge in Sydney'],
+    servicesTitle: 'Engineered access for complex bridge environments.',
+    description: 'Secure Scaffolding delivered engineered bridge access scaffolding at Hawkesbury River Bridge in Sydney, creating safe underdeck access above water for complex infrastructure work. The specialist scaffold solution supported work around the bridge structure where standard ground-based access was not practical. Our scope included scaffold installation, transport and consulting engineering for a coordinated bridge-access solution.',
+    services: ['Bridge access scaffolding', 'Underdeck access above water', 'Transport', 'Consulting engineering']
+  },
   { slug: 'scenic-world-katoomba', title: 'Scenic World Katoomba', location: 'Blue Mountains, NSW', category: 'Complex site access', image: '/projects/scenic-world.jpg', description: 'Carefully coordinated access for work in a complex, high-traffic Blue Mountains environment.', services: ['Scaffolding hire', 'Installation', 'Design support'] },
   { slug: 'royal-north-shore-hospital', title: 'Royal North Shore Hospital', location: 'St Leonards, NSW', category: 'Health infrastructure', image: '/projects/royal-north-shore.jpg', description: 'Professional access support for health infrastructure projects, with planning that respects active operational environments.', services: ['Scaffolding hire', 'Installation', 'Transport'] },
   {
