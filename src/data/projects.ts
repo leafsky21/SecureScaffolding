@@ -58,6 +58,27 @@ export const projects = [
     description: 'Secure Scaffolding supplied and installed a premium-quality temporary public access stair system for teachers, students and visitors at Mount St Benedict College in Sydney. Purpose-built for public use and high pedestrian traffic in a school environment, the system incorporated generous landings, continuous handrails and guardrails, slip-resistant flooring and high-visibility step nosings. This engineered public access solution is aligned with the National Construction Code and applicable Australian Standards. It is substantially different from conventional construction-site or stretcher stairs intended primarily for tradespeople.',
     services: ['Premium public access stair system', 'NCC and Australian Standards compliance', 'High-traffic pedestrian access', 'Scaffold-supported installation']
   },
+  {
+    slug: 'oran-park-high-rise-edge-protection',
+    title: 'High-Rise Edge Protection — Oran Park',
+    location: 'Oran Park, NSW',
+    category: 'High-rise slab and shaft edge protection',
+    seoTitle: 'High-Rise Edge Protection Oran Park | Secure Scaffolding',
+    seoDescription: 'Temporary high-rise edge protection installed at Oran Park for exposed concrete slab edges and open shaft areas using robust modular mesh barriers.',
+    image: '/projects/oran-park-edge-protection/131.JPG',
+    images: [
+      '/projects/oran-park-edge-protection/131.JPG',
+      '/projects/oran-park-edge-protection/IMG_4334.jpg'
+    ],
+    imageAlts: [
+      'Blue modular mesh edge-protection barrier clamped to the edge of a concrete slab at an Oran Park high-rise',
+      'Temporary mesh edge-protection system surrounding a concrete slab and open shaft area at Oran Park'
+    ],
+    galleryTitle: 'Edge protection for concrete slabs and shaft openings.',
+    servicesTitle: 'Secure perimeter protection for exposed high-rise edges.',
+    description: 'Secure Scaffolding supplied and installed temporary edge protection for a high-rise building project at Oran Park. The modular mesh barrier system was mounted along exposed concrete slab edges and around open shaft areas, creating a robust physical barrier at fall edges while allowing construction activities to continue. The installation was configured to suit the project’s changing slab and shaft conditions.',
+    services: ['Concrete slab edge protection', 'Shaft opening edge protection', 'Temporary mesh barriers', 'Installation and adjustment']
+  },
   { slug: 'prime-bluescope-erskine-park', title: 'Prime Constructions for BlueScope', location: '25–55 Templar Road, Erskine Park NSW', category: 'Steel manufacturing facility', image: '/projects/prime-bluescope-erskine-park/IMG_6327.jpg', images: ['/projects/prime-bluescope-erskine-park/IMG_6327.jpg','/projects/prime-bluescope-erskine-park/IMG_6592.jpg','/projects/prime-bluescope-erskine-park/IMG_6597.jpg','/projects/prime-bluescope-erskine-park/IMG_6598.jpg','/projects/prime-bluescope-erskine-park/IMG_6599.jpg','/projects/prime-bluescope-erskine-park/IMG_6610.jpg','/projects/prime-bluescope-erskine-park/IMG_6611.jpg','/projects/prime-bluescope-erskine-park/IMG_6612.jpg'], description: 'Engineer-certified scaffolding design and installation services for Prime Constructions at the BlueScope steel factory at 25–55 Templar Road, Erskine Park.', services: ['Scaffolding design', 'Engineer-certified installation', 'Scaffolding hire', 'Transport'] }
 ];
 
@@ -69,6 +90,7 @@ const uploadDates: Record<string, string> = {
   'scenic-world-katoomba': '2025-05-12',
   'royal-north-shore-hospital': '2025-06-18',
   'mount-st-benedict-college-public-stair-access': '2026-10-12',
+  'oran-park-high-rise-edge-protection': '2026-10-24',
   'prime-bluescope-erskine-park': '2026-08-17'
 };
 
