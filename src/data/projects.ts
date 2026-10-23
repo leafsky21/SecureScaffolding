@@ -62,9 +62,9 @@ export const projects = [
     slug: 'oran-park-high-rise-edge-protection',
     title: 'High-Rise Edge Protection — Oran Park',
     location: 'Oran Park, NSW',
-    category: 'High-rise slab and shaft edge protection',
+    category: 'Concrete slab and shaft edge protection',
     seoTitle: 'High-Rise Edge Protection Oran Park | Secure Scaffolding',
-    seoDescription: 'Temporary high-rise edge protection installed at Oran Park for exposed concrete slab edges and open shaft areas using robust modular mesh barriers.',
+    seoDescription: 'High-rise temporary edge protection installed at Oran Park for concrete slab edges, shaft openings and exposed perimeters using modular mesh barriers.',
     image: '/projects/oran-park-edge-protection/131.JPG',
     images: [
       '/projects/oran-park-edge-protection/131.JPG',
@@ -75,9 +75,9 @@ export const projects = [
       'Temporary mesh edge-protection system surrounding a concrete slab and open shaft area at Oran Park'
     ],
     galleryTitle: 'Edge protection for concrete slabs and shaft openings.',
-    servicesTitle: 'Secure perimeter protection for exposed high-rise edges.',
-    description: 'Secure Scaffolding supplied and installed temporary edge protection for a high-rise building project at Oran Park. The modular mesh barrier system was mounted along exposed concrete slab edges and around open shaft areas, creating a robust physical barrier at fall edges while allowing construction activities to continue. The installation was configured to suit the project’s changing slab and shaft conditions.',
-    services: ['Concrete slab edge protection', 'Shaft opening edge protection', 'Temporary mesh barriers', 'Installation and adjustment']
+    servicesTitle: 'Temporary edge protection for exposed high-rise perimeters.',
+    description: 'Secure Scaffolding supplied and installed a temporary edge protection system for a high-rise building project at Oran Park. The modular mesh barriers were mounted along exposed concrete slab edges, open shaft areas and other exposed perimeters, creating a robust physical barrier at fall edges while allowing construction activities to continue. The perimeter edge protection installation was configured to suit the project’s changing slab and shaft conditions.',
+    services: ['Concrete slab edge protection', 'Shaft opening edge protection', 'High-rise perimeter barriers', 'Installation and adjustment']
   },
   { slug: 'prime-bluescope-erskine-park', title: 'Prime Constructions for BlueScope', location: '25–55 Templar Road, Erskine Park NSW', category: 'Steel manufacturing facility', image: '/projects/prime-bluescope-erskine-park/IMG_6327.jpg', images: ['/projects/prime-bluescope-erskine-park/IMG_6327.jpg','/projects/prime-bluescope-erskine-park/IMG_6592.jpg','/projects/prime-bluescope-erskine-park/IMG_6597.jpg','/projects/prime-bluescope-erskine-park/IMG_6598.jpg','/projects/prime-bluescope-erskine-park/IMG_6599.jpg','/projects/prime-bluescope-erskine-park/IMG_6610.jpg','/projects/prime-bluescope-erskine-park/IMG_6611.jpg','/projects/prime-bluescope-erskine-park/IMG_6612.jpg'], description: 'Engineer-certified scaffolding design and installation services for Prime Constructions at the BlueScope steel factory at 25–55 Templar Road, Erskine Park.', services: ['Scaffolding design', 'Engineer-certified installation', 'Scaffolding hire', 'Transport'] }
 ];
