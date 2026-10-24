@@ -1,0 +1,168 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import GlobalCTA from '../components/GlobalCTA.astro';
+
+const siteUrl = 'https://www.securescaffolding.com.au';
+const pageUrl = `${siteUrl}/service-areas/`;
+const title = 'Scaffolding Sydney, Central Coast & Newcastle | Service Areas';
+const description = 'Scaffold hire, installation, commercial scaffolding and specialist access across Greater Sydney, the Central Coast and Newcastle from our Mount Kuring-Gai base.';
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+        { '@type': 'ListItem', position: 2, name: 'Service Areas', item: pageUrl }
+      ]
+    },
+    {
+      '@type': 'WebPage',
+      '@id': pageUrl,
+      url: pageUrl,
+      name: title,
+      description,
+      about: { '@id': `${siteUrl}/#business` },
+      isPartOf: { '@id': `${siteUrl}/#website` },
+      inLanguage: 'en-AU'
+    }
+  ]
+};
+
+const services = [
+  ['Scaffolding hire and installation', '/services/scaffolding-hire-sydney/', 'Supply, delivery, professional installation, adjustments and dismantling.'],
+  ['Commercial scaffolding', '/services/commercial-scaffolding-sydney/', 'Access systems planned around commercial, industrial, health and active sites.'],
+  ['Premium public access stairs', '/services/public-access-stairs-sydney/', 'Purpose-built temporary pedestrian stairs for schools and public-facing environments.'],
+  ['Bridge access scaffolding', '/services/bridge-access-scaffolding-sydney/', 'Under-bridge, underdeck and above-water access for infrastructure work.'],
+  ['Temporary edge protection', '/services/temporary-edge-protection-sydney/', 'Modular barriers for slab edges, shaft openings and high-rise perimeters.']
+];
+---
+
+<Base title={title} description={description} image="/projects/prime-bluescope-erskine-park/IMG_6327.webp" jsonLd={schema}>
+  <main>
+    <PageHeader
+      eyebrow="Scaffolding service areas"
+      title="Scaffolding across Sydney, the Central Coast and Newcastle."
+      intro="Based in Mount Kuring-Gai, Secure Scaffolding supports builders, contractors and project teams across Greater Sydney and selected regional NSW locations."
+    />
+
+    <section class="section coverage-intro" style="padding-top:0">
+      <div class="wrap coverage-intro-grid">
+        <div>
+          <div class="eyebrow">Local base, regional capability</div>
+          <h2>Access support planned around the project.</h2>
+        </div>
+        <div>
+          <p class="lead">Our location in northern Sydney gives us practical access to metropolitan projects, the Central Coast and Newcastle. Coverage depends on project scope, access conditions, equipment requirements and construction program.</p>
+          <p>We coordinate scaffold hire, installation, transport and specialist access as one project scope, helping builders and contractors work with a single experienced team.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section region-section">
+      <div class="wrap region-grid">
+        <article>
+          <div class="region-number">01</div>
+          <div>
+            <div class="eyebrow">Primary service area</div>
+            <h2>Greater Sydney</h2>
+            <p>We support projects across northern Sydney, the North Shore, Western Sydney, the Sydney metropolitan area and suitable locations throughout Greater Sydney.</p>
+            <p>Our published work includes commercial and specialist-access projects in <a href="/projects/royal-north-shore-hospital/">St Leonards</a>, <a href="/projects/prospect/">Prospect</a>, <a href="/projects/prime-bluescope-erskine-park/">Erskine Park</a>, <a href="/projects/oran-park-high-rise-edge-protection/">Oran Park</a> and <a href="/projects/barge-rozelle/">Rozelle</a>.</p>
+          </div>
+        </article>
+        <article>
+          <div class="region-number">02</div>
+          <div>
+            <div class="eyebrow">Regional projects</div>
+            <h2>Central Coast</h2>
+            <p>Secure Scaffolding mobilises to suitable Central Coast projects for scaffold hire, professional installation, transport and specialist access requirements.</p>
+            <p>Early project information helps our team assess equipment quantities, site logistics, installation sequencing and whether design or engineering support is required.</p>
+          </div>
+        </article>
+        <article>
+          <div class="region-number">03</div>
+          <div>
+            <div class="eyebrow">Project-based coverage</div>
+            <h2>Newcastle and wider NSW</h2>
+            <p>We support selected Newcastle and regional NSW projects where the scope suits our equipment, crews and specialist capability.</p>
+            <p>Examples of regional infrastructure experience include <a href="/projects/paterson-creek-bridge/">under-bridge access at Paterson Creek Bridge</a> and <a href="/projects/hawkesbury-river-bridge/">bridge access scaffolding above the Hawkesbury River</a>.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section services-by-area">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Services available by project</div>
+            <h2>Complete scaffolding and specialist access.</h2>
+          </div>
+          <p class="lead">Tell us the site location, project type, required access and construction program. We’ll confirm coverage and the most practical service scope.</p>
+        </div>
+        <div class="area-service-grid">
+          {services.map(([name, href, summary], index) =>
+            <a href={href}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <h3>{name}</h3>
+              <p>{summary}</p>
+              <strong>View service ↗</strong>
+            </a>
+          )}
+        </div>
+      </div>
+    </section>
+
+    <section class="section base-section">
+      <div class="wrap split">
+        <div>
+          <div class="eyebrow">Our Sydney base</div>
+          <h2>Secure Scaffolding Services Pty Ltd</h2>
+        </div>
+        <address>
+          <strong>5 Gundah Road</strong><br />
+          Mount Kuring-Gai NSW 2080<br />
+          <a href="tel:+61294570133">02 9457 0133</a><br />
+          <a href="mailto:info@securescaffolding.com.au">info@securescaffolding.com.au</a>
+        </address>
+      </div>
+    </section>
+
+    <div class="wrap"><GlobalCTA /></div>
+  </main>
+</Base>
+
+<style>
+  .coverage-intro-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(320px,1.1fr);gap:clamp(36px,7vw,90px);align-items:start}
+  .coverage-intro p:not(.lead){color:var(--muted);max-width:62ch;margin-top:18px}
+  .region-section{background:#f0f2ed}
+  .region-grid{display:grid;gap:18px}
+  .region-grid article{display:grid;grid-template-columns:90px 1fr;gap:28px;padding:32px;border:1px solid var(--line);border-top:3px solid var(--lime);border-radius:18px;background:#fff}
+  .region-number{font-size:1.35rem;font-weight:900;color:#7d901b}
+  .region-grid h2{font-size:clamp(2rem,4vw,3.5rem);margin:10px 0 16px}
+  .region-grid p{max-width:78ch;color:var(--muted)}
+  .region-grid p:last-child{margin-bottom:0}
+  .region-grid a{font-weight:800;color:#607300;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+  .services-by-area{background:#fff}
+  .area-service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .area-service-grid>a{display:flex;flex-direction:column;min-height:260px;padding:26px;border:1px solid var(--line);border-radius:16px;background:var(--paper);transition:.2s}
+  .area-service-grid>a:hover{transform:translateY(-3px);border-color:#b8cc36;box-shadow:0 12px 30px rgba(16,17,18,.08)}
+  .area-service-grid span{color:#7d901b;font-weight:900}
+  .area-service-grid h3{font-size:1.3rem;letter-spacing:-.035em;margin:34px 0 10px}
+  .area-service-grid p{color:var(--muted);margin:0 0 22px}
+  .area-service-grid strong{margin-top:auto;font-size:.85rem;color:#607300}
+  .base-section{background:var(--ink);color:#fff}
+  .base-section .eyebrow{color:var(--lime)}
+  .base-section address{font-style:normal;font-size:1.1rem;line-height:1.8;color:#c8ced0}
+  .base-section address strong,.base-section address a{color:#fff}
+  @media(max-width:900px){
+    .coverage-intro-grid{grid-template-columns:1fr}
+    .area-service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  @media(max-width:600px){
+    .region-grid article{grid-template-columns:1fr;gap:8px;padding:24px}
+    .area-service-grid{grid-template-columns:1fr}
+    .area-service-grid>a{min-height:0}
+  }
+</style>

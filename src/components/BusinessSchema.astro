@@ -1,4 +1,81 @@
 ---
-const schema = { '@context':'https://schema.org', '@type':'LocalBusiness', '@id':'https://www.securescaffolding.com.au/#business', name:'Secure Scaffolding Services Pty Ltd', url:'https://www.securescaffolding.com.au/', logo:'https://www.securescaffolding.com.au/secure-scaffolding-logo.webp', image:'https://www.securescaffolding.com.au/secure-scaffolding-logo.webp', description:'Scaffolding hire and installation, commercial scaffolding, premium public access stairs, bridge access scaffolding, temporary edge protection, labour and transport across Sydney, the Central Coast and Newcastle.', telephone:'+61 2 9457 0133', email:'info@securescaffolding.com.au', address:{ '@type':'PostalAddress', streetAddress:'5 Gundah Road', addressLocality:'Mount Kuring-Gai', addressRegion:'NSW', postalCode:'2080', addressCountry:'AU' }, areaServed:['Sydney','Central Coast','Newcastle'], knowsAbout:['Scaffolding hire Sydney','Commercial scaffolding Sydney','Scaffolding installation','Premium public access stairs','Bridge access scaffolding','Temporary edge protection systems','Engineer-certified scaffolding design','Scaffold transport'], hasOfferCatalog:{ '@type':'OfferCatalog', name:'Scaffolding and access services', itemListElement:[{ '@type':'Offer', itemOffered:{ '@type':'Service', name:'Scaffolding hire and installation', url:'https://www.securescaffolding.com.au/services/scaffolding-hire-sydney/' } },{ '@type':'Offer', itemOffered:{ '@type':'Service', name:'Commercial scaffolding', url:'https://www.securescaffolding.com.au/services/commercial-scaffolding-sydney/' } },{ '@type':'Offer', itemOffered:{ '@type':'Service', name:'Premium public access stairs', url:'https://www.securescaffolding.com.au/services/public-access-stairs-sydney/' } },{ '@type':'Offer', itemOffered:{ '@type':'Service', name:'Bridge access scaffolding', url:'https://www.securescaffolding.com.au/services/bridge-access-scaffolding-sydney/' } },{ '@type':'Offer', itemOffered:{ '@type':'Service', name:'Temporary edge protection', url:'https://www.securescaffolding.com.au/services/temporary-edge-protection-sydney/' } }] }, hasCredential:['SafeWork NSW compliant','$20 million public liability insurance'], sameAs:['https://www.instagram.com/securescaffolding1'] };
+const siteUrl = 'https://www.securescaffolding.com.au';
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'LocalBusiness',
+      '@id': `${siteUrl}/#business`,
+      name: 'Secure Scaffolding Services Pty Ltd',
+      alternateName: 'Secure Scaffolding',
+      legalName: 'Secure Scaffolding Services Pty Ltd',
+      url: `${siteUrl}/`,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/secure-scaffolding-logo.webp`
+      },
+      image: `${siteUrl}/projects/paterson-creek.webp`,
+      description: 'Australian-owned scaffolding company providing scaffold hire, installation, engineer-certified design, transport and specialist access across Sydney, the Central Coast and Newcastle.',
+      foundingDate: '1996',
+      taxID: 'ABN 26 679 229 924',
+      telephone: '+61 2 9457 0133',
+      email: 'info@securescaffolding.com.au',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '5 Gundah Road',
+        addressLocality: 'Mount Kuring-Gai',
+        addressRegion: 'NSW',
+        postalCode: '2080',
+        addressCountry: 'AU'
+      },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'sales and project enquiries',
+        telephone: '+61 2 9457 0133',
+        email: 'info@securescaffolding.com.au',
+        areaServed: ['Sydney', 'Central Coast', 'Newcastle'],
+        availableLanguage: 'English'
+      },
+      areaServed: [
+        { '@type': 'City', name: 'Sydney' },
+        { '@type': 'AdministrativeArea', name: 'Greater Sydney' },
+        { '@type': 'AdministrativeArea', name: 'Central Coast' },
+        { '@type': 'City', name: 'Newcastle' },
+        { '@type': 'State', name: 'New South Wales' }
+      ],
+      knowsAbout: [
+        'Scaffolding hire Sydney',
+        'Commercial scaffolding Sydney',
+        'Scaffolding installation',
+        'Premium public access stairs',
+        'Bridge access scaffolding',
+        'Temporary edge protection systems',
+        'Engineer-certified scaffolding design',
+        'Scaffold transport'
+      ],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Scaffolding and access services',
+        itemListElement: [
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Scaffolding hire and installation', url: `${siteUrl}/services/scaffolding-hire-sydney/` } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Commercial scaffolding', url: `${siteUrl}/services/commercial-scaffolding-sydney/` } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Premium public access stairs', url: `${siteUrl}/services/public-access-stairs-sydney/` } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Bridge access scaffolding', url: `${siteUrl}/services/bridge-access-scaffolding-sydney/` } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Temporary edge protection', url: `${siteUrl}/services/temporary-edge-protection-sydney/` } }
+        ]
+      },
+      sameAs: ['https://www.instagram.com/securescaffolding1']
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      url: `${siteUrl}/`,
+      name: 'Secure Scaffolding',
+      alternateName: 'Secure Scaffolding Services Pty Ltd',
+      publisher: { '@id': `${siteUrl}/#business` },
+      inLanguage: 'en-AU'
+    }
+  ]
+};
 ---
 <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>

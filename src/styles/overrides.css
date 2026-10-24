@@ -35,3 +35,21 @@ main{display:block;width:100%;max-width:100%;min-width:0;margin:0;overflow-x:hid
   .project-gallery,.project-gallery-wrap,.about-story,.about-story > *{min-width:0;max-width:100%;}
   .list-row span{min-width:0;text-align:right;overflow-wrap:anywhere;}
 }
+
+.site-footer{padding:42px 0}
+.footer-inner{display:grid;grid-template-columns:minmax(280px,1.3fr) minmax(180px,.7fr) auto;gap:34px;color:#b8c0c3;font-size:.85rem}
+.footer-inner address{font-style:normal;line-height:1.75}
+.footer-inner a:hover{color:var(--lime)}
+.footer-links{display:grid;align-content:start;gap:8px}
+.footer-links a{color:#fff;font-weight:750}
+.footer-tagline{text-align:right}
+
+@media(max-width:800px){
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .footer-tagline{grid-column:1/-1;text-align:left}
+}
+
+@media(max-width:480px){
+  .footer-inner{grid-template-columns:1fr}
+  .footer-tagline{grid-column:auto}
+}

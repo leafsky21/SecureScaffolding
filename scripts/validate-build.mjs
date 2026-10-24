@@ -42,6 +42,10 @@ for (const file of htmlFiles) {
     catch (error) { errors.push(`${file}: invalid JSON-LD (${error.message})`); }
   }
 
+  if (!html.includes('https://www.securescaffolding.com.au/#business') || !html.includes('"@type":"LocalBusiness"')) {
+    errors.push(`${file}: missing the canonical LocalBusiness entity`);
+  }
+
   for (const match of html.matchAll(/href="(\/[^"#?]*)/g)) {
     const href = match[1];
     if (/\.[a-z0-9]+$/i.test(href)) continue;

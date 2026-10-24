@@ -26,8 +26,8 @@ const projectSchema = {
       image: projectImages,
       mainEntityOfPage: pageUrl,
       about: { '@type': 'Service', name: project.category, ...(servicePageUrl ? { url: servicePageUrl } : {}) },
-      author: { '@type': 'Organization', name: 'Secure Scaffolding Services Pty Ltd', url: siteUrl },
-      publisher: { '@type': 'Organization', name: 'Secure Scaffolding Services Pty Ltd', url: siteUrl }
+      author: { '@id': `${siteUrl}/#business` },
+      publisher: { '@id': `${siteUrl}/#business` }
     }
   ]
 };
