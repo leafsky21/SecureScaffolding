@@ -1,5 +1,147 @@
 ---
-import Base from '../layouts/Base.astro'; import PageHeader from '../components/PageHeader.astro'; import GlobalCTA from '../components/GlobalCTA.astro';
-const services=[['Scaffolding hire','Quality equipment for projects of every size.'],['Scaffolding installation','Experienced crews who work safely around your program.'],['Labour','Skilled scaffolders available when your site needs support.'],['Transport','Reliable movement of equipment to and from site.'],['Design and certification','Engineer-certified scaffolding design, drawings and practical access planning for complex conditions.'],['Consulting engineering','Engineer-supported scaffolding solutions for your project.']];
+import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
+import GlobalCTA from '../components/GlobalCTA.astro';
+
+const specialistServices = [
+  {
+    eyebrow: 'Public and high-traffic access',
+    title: 'Premium public access stairs',
+    description: 'Purpose-built temporary stair systems for students, staff, visitors and the general public—not ordinary construction-site stairs.',
+    href: '/services/public-access-stairs-sydney',
+    image: '/projects/mount-st-benedict-college/IMG_4220.jpeg',
+    alt: 'Premium temporary public access stairs at Mount St Benedict College'
+  },
+  {
+    eyebrow: 'Civil and infrastructure access',
+    title: 'Bridge access scaffolding',
+    description: 'Specialist under-bridge, underdeck and above-water access for bridge inspection, maintenance and infrastructure works.',
+    href: '/services/bridge-access-scaffolding-sydney',
+    image: '/projects/hawkesbury-bridge.jpg',
+    alt: 'Bridge access scaffolding installed above water at Hawkesbury River Bridge'
+  },
+  {
+    eyebrow: 'High-rise and commercial safety',
+    title: 'Temporary edge protection',
+    description: 'Modular mesh barrier systems for exposed concrete slab edges, shaft openings and high-rise building perimeters.',
+    href: '/services/temporary-edge-protection-sydney',
+    image: '/projects/oran-park-edge-protection/131.JPG',
+    alt: 'Temporary mesh edge protection fixed to a concrete slab at Oran Park'
+  }
+];
+
+const capabilities = [
+  ['Scaffolding hire', 'Quality equipment for projects of every size.'],
+  ['Scaffolding installation', 'Experienced crews who work safely around your program.'],
+  ['Labour', 'Skilled scaffolders available when your site needs support.'],
+  ['Transport', 'Reliable movement of equipment to and from site.'],
+  ['Design and certification', 'Engineer-certified scaffolding design, drawings and practical access planning for complex conditions.'],
+  ['Consulting engineering', 'Engineer-supported scaffolding solutions for your project.']
+];
 ---
-<Base title="Services | Secure Scaffolding" description="Scaffolding hire, installation, temporary edge protection, bridge access, transport and engineering support across Sydney, the Central Coast and Newcastle." current="services"><main><PageHeader eyebrow="Our services" title="Access, handled." intro="A flexible service offering for the pace and complexity of modern construction." /><section class="section" style="padding-top:0"><div class="wrap"><div class="service-cards">{services.map(([title,description],i)=><article class="service-card"><span>0{i+1}</span><h2>{title}</h2><p>{description}</p><a href="/contact">Talk to our team ↗</a></article>)}</div></div></section><section class="section edge-access"><div class="wrap split"><div><div class="eyebrow">High-rise and commercial safety</div><h2>Temporary edge protection systems across Sydney.</h2></div><div><p class="lead">Secure Scaffolding supplies and installs construction edge protection for exposed concrete slab edges, shaft openings and high-rise perimeters. Our modular mesh barrier systems can be adjusted as slab and shaft conditions change throughout the build.</p><div class="service-links"><a href="/services/temporary-edge-protection-sydney">Explore temporary edge protection Sydney ↗</a><a href="/projects/oran-park-high-rise-edge-protection">View the Oran Park edge-protection project ↗</a></div></div></div></section><section class="section bridge-access"><div class="wrap split"><div><div class="eyebrow">Bridge and infrastructure access</div><h2>Bridge access scaffolding across Sydney and NSW.</h2></div><div><p class="lead">Secure Scaffolding supplies and installs specialist bridge and infrastructure scaffolding for complex works across Sydney, the Central Coast, Newcastle and regional NSW. Our experience includes under-bridge and underdeck scaffold access, suspended working platforms and scaffolding above water for bridge maintenance, inspection and repair programs.</p><div class="service-links"><a href="/projects/paterson-creek-bridge">View under-bridge scaffolding in NSW ↗</a><a href="/projects/hawkesbury-river-bridge">View Hawkesbury River bridge access ↗</a></div></div></div></section><section class="section band"><div class="wrap split"><div><div class="eyebrow" style="color:#d7f54b">Our approach</div><h2>Safe, practical, on schedule.</h2></div><p class="lead">We work alongside your team to understand the site, coordinate the details and deliver access that keeps the project moving.</p></div></section><div class="wrap"><GlobalCTA /></div></main><style>.service-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.service-card{padding:26px;border:1px solid var(--line);border-radius:16px;background:#fff;min-height:220px;transition:.2s}.service-card:hover{transform:translateY(-3px);border-color:#b8cc36;box-shadow:0 12px 30px rgba(16,17,18,.08)}.service-card>span{color:#98ab22;font-weight:900}.service-card h2{font-size:1.35rem;letter-spacing:-.04em;margin:42px 0 8px}.service-card p{color:var(--muted);margin:0 0 22px}.service-card a{font-weight:800;font-size:.85rem}.edge-access,.bridge-access{padding-top:20px}.service-links{display:flex;flex-wrap:wrap;gap:12px 22px;margin-top:24px}.service-links a{font-weight:800;color:#607300}@media(max-width:800px){.service-cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:480px){.service-cards{grid-template-columns:1fr}.service-links{display:grid}}</style></Base>
+
+<Base
+  title="Scaffolding & Access Services Sydney | Secure Scaffolding"
+  description="Scaffolding hire and installation, premium public access stairs, bridge access scaffolding, temporary edge protection, transport and engineering support across Sydney and NSW."
+  current="services"
+>
+  <main>
+    <PageHeader
+      eyebrow="Our services"
+      title="Scaffolding and specialist access services."
+      intro="Practical access solutions for construction, infrastructure and public environments across Sydney and NSW."
+    />
+
+    <section class="section specialists" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Specialist access solutions</div>
+            <h2>Solutions built around the access challenge.</h2>
+          </div>
+          <p class="lead">Explore purpose-built systems for public pedestrian access, bridge and infrastructure work, and exposed construction edges.</p>
+        </div>
+        <div class="specialist-grid">
+          {specialistServices.map(service =>
+            <article class="specialist-card">
+              <a class="specialist-image" href={service.href} aria-label={`View ${service.title}`}>
+                <img src={service.image} alt={service.alt} loading="lazy" />
+              </a>
+              <div class="specialist-content">
+                <div class="eyebrow">{service.eyebrow}</div>
+                <h3><a href={service.href}>{service.title}</a></h3>
+                <p>{service.description}</p>
+                <a class="service-link" href={service.href}>Explore this service ↗</a>
+              </div>
+            </article>
+          )}
+        </div>
+      </div>
+    </section>
+
+    <section class="section capabilities">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Supporting capabilities</div>
+            <h2>From planning through installation.</h2>
+          </div>
+          <p class="lead">Hire, labour, transport and engineering support coordinated around your program and site conditions.</p>
+        </div>
+        <div class="service-cards">
+          {capabilities.map(([title, description], index) =>
+            <article class="service-card">
+              <span>0{index + 1}</span>
+              <h3>{title}</h3>
+              <p>{description}</p>
+              <a href="/contact">Talk to our team ↗</a>
+            </article>
+          )}
+        </div>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="wrap split">
+        <div>
+          <div class="eyebrow" style="color:#d7f54b">Our approach</div>
+          <h2>Safe, practical, on schedule.</h2>
+        </div>
+        <p class="lead">We work alongside your team to understand the site, coordinate the details and deliver access that keeps the project moving.</p>
+      </div>
+    </section>
+
+    <div class="wrap"><GlobalCTA /></div>
+  </main>
+</Base>
+
+<style>
+  .specialist-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .specialist-card{display:flex;flex-direction:column;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#fff;border-top:3px solid #e4f04a}
+  .specialist-image{display:block;overflow:hidden;background:#202326}
+  .specialist-image img{display:block;width:100%;height:245px;object-fit:cover;transition:transform .35s ease}
+  .specialist-card:hover .specialist-image img{transform:scale(1.035)}
+  .specialist-content{display:flex;flex:1;flex-direction:column;padding:26px}
+  .specialist-content h3{font-size:1.55rem;line-height:1.05;letter-spacing:-.045em;margin:14px 0 12px}
+  .specialist-content p{color:var(--muted);margin:0 0 24px}
+  .service-link{margin-top:auto;font-size:.88rem;font-weight:900;color:#607300}
+  .capabilities{background:#f0f2ed}
+  .service-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .service-card{display:flex;flex-direction:column;min-width:0;padding:26px;border:1px solid var(--line);border-radius:16px;background:#fff;min-height:220px;transition:.2s}
+  .service-card:hover{transform:translateY(-3px);border-color:#b8cc36;box-shadow:0 12px 30px rgba(16,17,18,.08)}
+  .service-card>span{color:#98ab22;font-weight:900}
+  .service-card h3{font-size:1.35rem;letter-spacing:-.04em;margin:42px 0 8px}
+  .service-card p{color:var(--muted);margin:0 0 22px}
+  .service-card a{margin-top:auto;font-weight:800;font-size:.85rem}
+  @media(max-width:900px){
+    .specialist-grid{grid-template-columns:1fr}
+    .specialist-card{display:grid;grid-template-columns:minmax(220px,.8fr) 1.2fr}
+    .specialist-image img{height:100%;min-height:280px}
+    .service-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+  @media(max-width:600px){
+    .specialist-card{display:block}
+    .specialist-image img{height:230px;min-height:0}
+    .service-cards{grid-template-columns:1fr}
+  }
+</style>

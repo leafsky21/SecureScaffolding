@@ -8,6 +8,8 @@ export const projects = [
     seoDescription: 'Specialist under-bridge scaffolding and working-platform access installed around Paterson Creek Bridge for safe, practical infrastructure access in NSW.',
     image: '/projects/paterson-creek.jpg',
     imageAlts: ['Under-bridge scaffolding and working-platform access installed along Paterson Creek Bridge in NSW'],
+    servicePage: '/services/bridge-access-scaffolding-sydney',
+    serviceLinkLabel: 'Explore bridge access scaffolding',
     servicesTitle: 'Specialist access beneath and alongside bridge structures.',
     description: 'Secure Scaffolding supplied and installed specialist under-bridge scaffolding at Paterson Creek Bridge in NSW. The scaffold system created safe working-platform access beneath and alongside the steel bridge structure, supporting crews around difficult spans, piers and elevated work areas. This bridge access solution demonstrates our capability in complex infrastructure scaffolding where conventional ground-based access is limited.',
     services: ['Under-bridge scaffold access', 'Working-platform installation', 'Transport', 'Design support']
@@ -19,10 +21,12 @@ export const projects = [
     title: 'Bridge Access Scaffolding — Hawkesbury River Bridge',
     location: 'Hawkesbury, NSW',
     category: 'Bridge and infrastructure scaffolding',
-    seoTitle: 'Bridge Access Scaffolding Sydney | Hawkesbury River',
+    seoTitle: 'Bridge Access Scaffolding | Hawkesbury River Project',
     seoDescription: 'Engineered bridge access scaffolding above water for the Hawkesbury River Bridge, supporting safe underdeck access for complex infrastructure work.',
     image: '/projects/hawkesbury-bridge.jpg',
     imageAlts: ['Underdeck bridge access scaffolding above water at Hawkesbury River Bridge in Sydney'],
+    servicePage: '/services/bridge-access-scaffolding-sydney',
+    serviceLinkLabel: 'Explore bridge access scaffolding',
     servicesTitle: 'Engineered access for complex bridge environments.',
     description: 'Secure Scaffolding delivered engineered bridge access scaffolding at Hawkesbury River Bridge in Sydney, creating safe underdeck access above water for complex infrastructure work. The specialist scaffold solution supported work around the bridge structure where standard ground-based access was not practical. Our scope included scaffold installation, transport and consulting engineering for a coordinated bridge-access solution.',
     services: ['Bridge access scaffolding', 'Underdeck access above water', 'Transport', 'Consulting engineering']
@@ -34,7 +38,7 @@ export const projects = [
     title: 'Premium Public Access Stairs — Mount St Benedict College',
     location: 'Mount St Benedict College, NSW',
     category: 'Premium public access stairs',
-    seoTitle: 'Public Access Stairs Sydney | Secure Scaffolding',
+    seoTitle: 'Public Access Stairs | Mount St Benedict College',
     seoDescription: 'Premium temporary public access stairs for schools and high-traffic sites in Sydney, with engineered landings, handrails, guardrails and slip-resistant surfaces.',
     image: '/projects/mount-st-benedict-college/IMG_4220.jpeg',
     images: [
@@ -53,6 +57,8 @@ export const projects = [
       'Temporary pedestrian access landing connecting the school grounds to the public access stairs',
       'Engineered scaffold support beneath the temporary public access stair system'
     ],
+    servicePage: '/services/public-access-stairs-sydney',
+    serviceLinkLabel: 'Explore premium public access stairs',
     galleryTitle: 'Premium temporary public access stairs for schools.',
     servicesTitle: 'Purpose-built public access—not ordinary site stairs.',
     description: 'Secure Scaffolding supplied and installed a premium-quality temporary public access stair system for teachers, students and visitors at Mount St Benedict College in Sydney. Purpose-built for public use and high pedestrian traffic in a school environment, the system incorporated generous landings, continuous handrails and guardrails, slip-resistant flooring and high-visibility step nosings. This engineered public access solution is aligned with the National Construction Code and applicable Australian Standards. It is substantially different from conventional construction-site or stretcher stairs intended primarily for tradespeople.',
@@ -74,6 +80,8 @@ export const projects = [
       'Blue modular mesh edge-protection barrier clamped to the edge of a concrete slab at an Oran Park high-rise',
       'Temporary mesh edge-protection system surrounding a concrete slab and open shaft area at Oran Park'
     ],
+    servicePage: '/services/temporary-edge-protection-sydney',
+    serviceLinkLabel: 'Explore temporary edge protection',
     galleryTitle: 'Edge protection for concrete slabs and shaft openings.',
     servicesTitle: 'Temporary edge protection for exposed high-rise perimeters.',
     description: 'Secure Scaffolding supplied and installed a temporary edge protection system for a high-rise building project at Oran Park. The modular mesh barriers were mounted along exposed concrete slab edges, open shaft areas and other exposed perimeters, creating a robust physical barrier at fall edges while allowing construction activities to continue. The perimeter edge protection installation was configured to suit the project’s changing slab and shaft conditions.',

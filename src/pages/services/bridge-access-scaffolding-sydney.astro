@@ -1,0 +1,138 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import GlobalCTA from '../../components/GlobalCTA.astro';
+
+const siteUrl = 'https://www.securescaffolding.com.au';
+const pageUrl = `${siteUrl}/services/bridge-access-scaffolding-sydney`;
+const title = 'Bridge Access Scaffolding Sydney | Secure Scaffolding';
+const description = 'Specialist bridge access scaffolding across Sydney and NSW, including under-bridge scaffolding, underdeck access, working platforms and access above water.';
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: `${siteUrl}/services` },
+        { '@type': 'ListItem', position: 3, name: 'Bridge Access Scaffolding Sydney', item: pageUrl }
+      ]
+    },
+    {
+      '@type': 'Service',
+      name: 'Bridge Access Scaffolding Sydney',
+      description,
+      url: pageUrl,
+      serviceType: [
+        'Bridge access scaffolding',
+        'Under-bridge scaffolding',
+        'Underdeck access scaffolding',
+        'Bridge working platforms',
+        'Scaffolding above water'
+      ],
+      areaServed: [
+        { '@type': 'City', name: 'Sydney' },
+        { '@type': 'AdministrativeArea', name: 'New South Wales' }
+      ],
+      provider: {
+        '@type': 'Organization',
+        name: 'Secure Scaffolding Services Pty Ltd',
+        url: siteUrl
+      }
+    }
+  ]
+};
+---
+
+<Base title={title} description={description} current="services" image="/projects/hawkesbury-bridge.jpg" jsonLd={schema}>
+  <main>
+    <PageHeader
+      eyebrow="Bridge access scaffolding Sydney"
+      title="Specialist access for bridges and infrastructure."
+      intro="Under-bridge, underdeck and above-water scaffolding for inspection, maintenance, repair and complex infrastructure work across Sydney and NSW."
+    />
+
+    <section class="section service-intro" style="padding-top:0">
+      <div class="wrap service-intro-grid">
+        <img src="/projects/hawkesbury-bridge.jpg" alt="Bridge access scaffolding installed above water at Hawkesbury River Bridge" />
+        <div>
+          <div class="eyebrow">Access where ground support is limited</div>
+          <h2>Practical access around difficult bridge structures.</h2>
+          <p class="lead">Bridge maintenance and inspection often require working access beneath decks, beside steelwork, around piers or above water. Secure Scaffolding develops bridge-access configurations around the structure, work area and available support conditions.</p>
+          <p>Our scope can include scaffold hire, installation, transport, working platforms and engineer-supported access planning for complex civil and infrastructure environments.</p>
+          <a class="btn btn-dark" href="/contact">Discuss bridge access ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section feature-section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Bridge-access applications</div>
+            <h2>Access configured around the structure.</h2>
+          </div>
+          <p class="lead">Specialist scaffolding for locations where ordinary ground-based access cannot reach the work area.</p>
+        </div>
+        <div class="feature-grid">
+          <article><span>01</span><h3>Under-bridge scaffolding</h3><p>Access beneath and alongside bridge spans, steelwork and elevated structural elements.</p></article>
+          <article><span>02</span><h3>Underdeck working platforms</h3><p>Practical working-platform access for inspection, maintenance and repair activities beneath the deck.</p></article>
+          <article><span>03</span><h3>Access above water</h3><p>Scaffold configurations for bridge work where waterways, embankments or limited ground support complicate access.</p></article>
+          <article><span>04</span><h3>Design and installation support</h3><p>Coordinated transport, installation and engineer-supported planning around site and structural constraints.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section project-proof">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Bridge project experience</div>
+            <h2>Delivered across complex NSW environments.</h2>
+          </div>
+          <p class="lead">Explore recent under-bridge and above-water scaffold access delivered by Secure Scaffolding.</p>
+        </div>
+        <div class="project-grid">
+          <article>
+            <img src="/projects/paterson-creek.jpg" alt="Under-bridge scaffold access installed at Paterson Creek Bridge in NSW" loading="lazy" />
+            <div><h3>Paterson Creek Bridge</h3><p>Under-bridge scaffolding and working-platform access beneath and alongside the steel bridge structure.</p><a href="/projects/paterson-creek-bridge">View project ↗</a></div>
+          </article>
+          <article>
+            <img src="/projects/hawkesbury-bridge.jpg" alt="Underdeck bridge access scaffolding above water at Hawkesbury River Bridge" loading="lazy" />
+            <div><h3>Hawkesbury River Bridge</h3><p>Engineer-supported underdeck access above water for complex infrastructure work around the bridge structure.</p><a href="/projects/hawkesbury-river-bridge">View project ↗</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap"><GlobalCTA /></div>
+  </main>
+</Base>
+
+<style>
+  .service-intro-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);gap:clamp(30px,6vw,78px);align-items:center}
+  .service-intro-grid>*{min-width:0}
+  .service-intro img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:20px}
+  .service-intro h2{font-size:clamp(2.3rem,4.5vw,4.5rem)}
+  .service-intro p:not(.lead){color:var(--muted);margin:18px 0 28px}
+  .feature-section{background:#f0f2ed}
+  .feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .feature-grid article{min-width:0;padding:28px;border:1px solid var(--line);border-radius:16px;background:#fff;border-top:3px solid #e4f04a}
+  .feature-grid span{color:#7d901b;font-weight:900}
+  .feature-grid h3{font-size:1.35rem;letter-spacing:-.035em;margin:36px 0 10px}
+  .feature-grid p{color:var(--muted);margin:0}
+  .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  .project-grid article{min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#fff}
+  .project-grid img{display:block;width:100%;height:310px;object-fit:cover}
+  .project-grid article>div{padding:26px}
+  .project-grid h3{font-size:1.45rem;letter-spacing:-.04em;margin:0 0 10px}
+  .project-grid p{color:var(--muted);margin:0 0 20px}
+  .project-grid a{font-weight:900;color:#607300}
+  @media(max-width:800px){
+    .service-intro-grid,.project-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:560px){
+    .feature-grid{grid-template-columns:1fr}
+    .project-grid img{height:260px}
+  }
+</style>
