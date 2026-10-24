@@ -1,5 +1,57 @@
 ---
 import { sortedProjects as projects } from '../data/projects';
 import ResponsiveImage from './ResponsiveImage.astro';
+const imageSizes = '(max-width: 600px) calc(100vw - 28px), (max-width: 900px) calc((100vw - 62px) / 2), 317px';
 ---
-<div class="project-gallery-wrap" style="max-width:1000px;margin-inline:auto"><div class="project-gallery">{projects.slice(0, 5).map((project, index) => <a href={`/projects/${project.slug}/`} class:list={{ 'project-feature': index === 0 || index === 3 }}><figure><ResponsiveImage src={project.image} alt={project.imageAlts?.[0] ?? project.title} width={project.imageWidth} height={project.imageHeight} sizes={index === 0 || index === 3 ? '(max-width: 800px) calc(100vw - 28px), 50vw' : '(max-width: 800px) 50vw, 25vw'} loading={index > 1 ? 'lazy' : 'eager'} style="max-height:360px" /><figcaption><strong>{project.title}</strong><span style="display:block;margin-top:4px">{project.category} ↗</span></figcaption></figure></a>)}</div>{projects.length > 5 && <><div class="project-gallery project-gallery-more" hidden>{projects.slice(5).map(project => <a href={`/projects/${project.slug}/`}><figure><ResponsiveImage src={project.image} alt={project.imageAlts?.[0] ?? project.title} width={project.imageWidth} height={project.imageHeight} sizes="(max-width: 800px) 50vw, 25vw" style="max-height:360px" /><figcaption><strong>{project.title}</strong><span style="display:block;margin-top:4px">{project.category} ↗</span></figcaption></figure></a>)}</div><button class="btn btn-dark gallery-toggle" type="button" aria-expanded="false">Show more projects ↓</button></>}</div><script>document.querySelectorAll('.gallery-toggle').forEach((button)=>button.addEventListener('click',()=>{const more=button.previousElementSibling;if(!more)return;const open=more.hasAttribute('hidden');if(open)more.removeAttribute('hidden');else more.setAttribute('hidden','');button.setAttribute('aria-expanded',String(open));button.textContent=open?'Show fewer projects ↑':'Show more projects ↓'}));</script>
+<div class="project-gallery-wrap">
+  <div class="home-project-grid">
+    {projects.slice(0, 5).map(project => (
+      <a href={`/projects/${project.slug}/`}>
+        <figure>
+          <ResponsiveImage src={project.image} alt={project.imageAlts?.[0] ?? project.title} width={project.imageWidth} height={project.imageHeight} sizes={imageSizes} />
+          <figcaption><strong>{project.title}</strong><span>{project.category} ↗</span></figcaption>
+        </figure>
+      </a>
+    ))}
+  </div>
+  {projects.length > 5 && <>
+    <div id="more-home-projects" class="home-project-grid home-project-grid-more" hidden>
+      {projects.slice(5).map(project => (
+        <a href={`/projects/${project.slug}/`}>
+          <figure>
+            <ResponsiveImage src={project.image} alt={project.imageAlts?.[0] ?? project.title} width={project.imageWidth} height={project.imageHeight} sizes={imageSizes} />
+            <figcaption><strong>{project.title}</strong><span>{project.category} ↗</span></figcaption>
+          </figure>
+        </a>
+      ))}
+    </div>
+    <button class="btn btn-dark gallery-toggle" type="button" aria-expanded="false" aria-controls="more-home-projects">Show more projects ↓</button>
+  </>}
+</div>
+<style>
+  .project-gallery-wrap{max-width:1000px;margin-inline:auto}
+  .home-project-grid{columns:3;column-gap:24px}
+  .home-project-grid[hidden]{display:none}
+  .home-project-grid a{display:inline-block;width:100%;margin-bottom:24px;break-inside:avoid}
+  .home-project-grid figure{margin:0;overflow:hidden;border:1px solid var(--line);border-radius:16px;background:#fff}
+  .home-project-grid :global(img){display:block;width:100%;height:auto}
+  .home-project-grid figcaption{padding:18px;display:grid;gap:7px}
+  .home-project-grid strong{font-size:1rem;line-height:1.3}
+  .home-project-grid span{font-size:.78rem;color:var(--muted)}
+  .home-project-grid a:hover strong{color:#607300}
+  .gallery-toggle{display:flex;margin:12px auto 0;cursor:pointer;font:inherit;font-weight:800}
+  @media(max-width:900px){.home-project-grid{columns:2}}
+  @media(max-width:600px){.home-project-grid{columns:1;max-width:400px;margin-inline:auto}}
+</style>
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.gallery-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const more = document.getElementById(button.getAttribute('aria-controls') ?? '');
+      if (!more) return;
+      const open = more.hasAttribute('hidden');
+      more.toggleAttribute('hidden', !open);
+      button.setAttribute('aria-expanded', String(open));
+      button.textContent = open ? 'Show fewer projects ↑' : 'Show more projects ↓';
+    });
+  });
+</script>
