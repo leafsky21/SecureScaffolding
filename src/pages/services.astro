@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import PageHeader from '../components/PageHeader.astro';
 import GlobalCTA from '../components/GlobalCTA.astro';
+import ResponsiveImage from '../components/ResponsiveImage.astro';
 
 const coreServices = [
   {
@@ -10,6 +11,8 @@ const coreServices = [
     description: 'Scaffold hire, delivery, professional installation and dismantling coordinated around your site and construction program.',
     href: '/services/scaffolding-hire-sydney/',
     image: '/projects/prospect.webp',
+    imageWidth: 900,
+    imageHeight: 650,
     alt: 'Scaffolding installed for a construction project in Western Sydney'
   },
   {
@@ -18,6 +21,8 @@ const coreServices = [
     description: 'Planned access systems for commercial, industrial, health and infrastructure projects with complex site conditions.',
     href: '/services/commercial-scaffolding-sydney/',
     image: '/projects/prime-bluescope-erskine-park/IMG_6327.webp',
+    imageWidth: 1920,
+    imageHeight: 2560,
     alt: 'Commercial scaffolding installed at the BlueScope facility in Erskine Park'
   }
 ];
@@ -29,6 +34,8 @@ const specialistServices = [
     description: 'Purpose-built temporary stair systems for students, staff, visitors and the general public—not ordinary construction-site stairs.',
     href: '/services/public-access-stairs-sydney/',
     image: '/projects/mount-st-benedict-college/IMG_4220.webp',
+    imageWidth: 1920,
+    imageHeight: 1528,
     alt: 'Premium temporary public access stairs at Mount St Benedict College'
   },
   {
@@ -37,6 +44,8 @@ const specialistServices = [
     description: 'Specialist under-bridge, underdeck and above-water access for bridge inspection, maintenance and infrastructure works.',
     href: '/services/bridge-access-scaffolding-sydney/',
     image: '/projects/hawkesbury-bridge.webp',
+    imageWidth: 900,
+    imageHeight: 650,
     alt: 'Bridge access scaffolding installed above water at Hawkesbury River Bridge'
   },
   {
@@ -45,6 +54,8 @@ const specialistServices = [
     description: 'Modular mesh barrier systems for exposed concrete slab edges, shaft openings and high-rise building perimeters.',
     href: '/services/temporary-edge-protection-sydney/',
     image: '/projects/oran-park-edge-protection/131.webp',
+    imageWidth: 1280,
+    imageHeight: 1707,
     alt: 'Temporary mesh edge protection fixed to a concrete slab at Oran Park'
   }
 ];
@@ -82,7 +93,7 @@ const capabilities = [
           {coreServices.map(service =>
             <article class="specialist-card">
               <a class="specialist-image" href={service.href} aria-label={`View ${service.title}`}>
-                <img src={service.image} alt={service.alt} loading="lazy" decoding="async" />
+                <ResponsiveImage src={service.image} alt={service.alt} width={service.imageWidth} height={service.imageHeight} sizes="(max-width: 900px) 40vw, 50vw" />
               </a>
               <div class="specialist-content">
                 <div class="eyebrow">{service.eyebrow}</div>
@@ -109,7 +120,7 @@ const capabilities = [
           {specialistServices.map(service =>
             <article class="specialist-card">
               <a class="specialist-image" href={service.href} aria-label={`View ${service.title}`}>
-                <img src={service.image} alt={service.alt} loading="lazy" decoding="async" />
+                <ResponsiveImage src={service.image} alt={service.alt} width={service.imageWidth} height={service.imageHeight} sizes="(max-width: 600px) calc(100vw - 28px), (max-width: 900px) 40vw, 33vw" />
               </a>
               <div class="specialist-content">
                 <div class="eyebrow">{service.eyebrow}</div>

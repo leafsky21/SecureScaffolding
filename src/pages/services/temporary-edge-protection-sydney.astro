@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import GlobalCTA from '../../components/GlobalCTA.astro';
+import ResponsiveImage from '../../components/ResponsiveImage.astro';
 
 const siteUrl = 'https://www.securescaffolding.com.au';
 const pageUrl = `${siteUrl}/services/temporary-edge-protection-sydney/`;
@@ -97,7 +98,7 @@ const schema = {
 
     <section class="section project-proof">
       <div class="wrap project-proof-grid">
-        <img src="/projects/oran-park-edge-protection/131.webp" alt="Blue modular mesh edge-protection barrier clamped to a concrete slab edge at an Oran Park high-rise building" loading="lazy" decoding="async" />
+        <ResponsiveImage src="/projects/oran-park-edge-protection/131.webp" alt="Blue modular mesh edge-protection barrier clamped to a concrete slab edge at an Oran Park high-rise building" width={1280} height={1707} sizes="(max-width: 800px) calc(100vw - 28px), 55vw" />
         <div>
           <div class="eyebrow">Recent project</div>
           <h2>High-Rise Edge Protection — Oran Park</h2>

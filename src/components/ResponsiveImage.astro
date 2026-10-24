@@ -1,0 +1,36 @@
+---
+const {
+  src,
+  alt,
+  width,
+  height,
+  sizes = '100vw',
+  loading = 'lazy',
+  decoding = 'async',
+  fetchpriority,
+  class: className,
+  ...attributes
+} = Astro.props;
+
+const extensionIndex = src.lastIndexOf('.');
+const basePath = extensionIndex === -1 ? src : src.slice(0, extensionIndex);
+const extension = extensionIndex === -1 ? '' : src.slice(extensionIndex);
+const generatedWidths = [480, 960, 1440].filter(candidate => candidate < width);
+const srcset = [
+  ...generatedWidths.map(candidate => `${basePath}-${candidate}${extension} ${candidate}w`),
+  `${src} ${width}w`
+].join(', ');
+---
+<img
+  src={src}
+  srcset={srcset}
+  sizes={sizes}
+  alt={alt}
+  width={width}
+  height={height}
+  loading={loading}
+  decoding={decoding}
+  fetchpriority={fetchpriority}
+  class={className}
+  {...attributes}
+/>

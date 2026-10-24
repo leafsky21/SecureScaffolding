@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import GlobalCTA from '../../components/GlobalCTA.astro';
+import ResponsiveImage from '../../components/ResponsiveImage.astro';
 
 const siteUrl = 'https://www.securescaffolding.com.au';
 const pageUrl = `${siteUrl}/services/public-access-stairs-sydney/`;
@@ -49,7 +50,7 @@ const schema = {
 
     <section class="section service-intro" style="padding-top:0">
       <div class="wrap service-intro-grid">
-        <img src="/projects/mount-st-benedict-college/IMG_4220.webp" alt="Premium temporary public access stair system installed at Mount St Benedict College" width="1920" height="1528" />
+        <ResponsiveImage src="/projects/mount-st-benedict-college/IMG_4220.webp" alt="Premium temporary public access stair system installed at Mount St Benedict College" width={1920} height={1528} sizes="(max-width: 800px) calc(100vw - 28px), 55vw" loading="eager" fetchpriority="high" />
         <div>
           <div class="eyebrow">Public use, not ordinary site access</div>
           <h2>A premium-quality pedestrian stair system.</h2>
@@ -87,8 +88,8 @@ const schema = {
           <a class="text-link" href="/projects/mount-st-benedict-college-public-stair-access/">View the public access stair project ↗</a>
         </div>
         <div class="project-images">
-          <img src="/projects/mount-st-benedict-college/IMG_4243.webp" alt="Wide public access stair flights with guarded landings at Mount St Benedict College" loading="lazy" decoding="async" />
-          <img src="/projects/mount-st-benedict-college/IMG_4223.webp" alt="Guardrailed public access stair landing overlooking Mount St Benedict College" loading="lazy" decoding="async" />
+          <ResponsiveImage src="/projects/mount-st-benedict-college/IMG_4243.webp" alt="Wide public access stair flights with guarded landings at Mount St Benedict College" width={1920} height={2560} sizes="(max-width: 560px) calc(100vw - 28px), (max-width: 800px) 50vw, 35vw" />
+          <ResponsiveImage src="/projects/mount-st-benedict-college/IMG_4223.webp" alt="Guardrailed public access stair landing overlooking Mount St Benedict College" width={1920} height={1440} sizes="(max-width: 560px) calc(100vw - 28px), (max-width: 800px) 50vw, 35vw" />
         </div>
       </div>
     </section>

@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import GlobalCTA from '../../components/GlobalCTA.astro';
+import ResponsiveImage from '../../components/ResponsiveImage.astro';
 
 const siteUrl = 'https://www.securescaffolding.com.au';
 const pageUrl = `${siteUrl}/services/commercial-scaffolding-sydney/`;
@@ -44,7 +45,7 @@ const schema = {
 
     <section class="section service-intro" style="padding-top:0">
       <div class="wrap service-intro-grid">
-        <img src="/projects/prime-bluescope-erskine-park/IMG_6327.webp" alt="Commercial scaffolding installed at the BlueScope facility in Erskine Park" width="1920" height="1440" />
+        <ResponsiveImage src="/projects/prime-bluescope-erskine-park/IMG_6327.webp" alt="Commercial scaffolding installed at the BlueScope facility in Erskine Park" width={1920} height={2560} sizes="(max-width: 800px) calc(100vw - 28px), 55vw" loading="eager" fetchpriority="high" />
         <div>
           <div class="eyebrow">Builder-focused access planning</div>
           <h2>Scaffolding that works with the construction sequence.</h2>
@@ -88,8 +89,8 @@ const schema = {
           <p class="lead">Explore projects that show our commercial scaffolding, installation and design capability.</p>
         </div>
         <div class="project-grid">
-          <a href="/projects/prime-bluescope-erskine-park/"><img src="/projects/prime-bluescope-erskine-park/IMG_6592.webp" alt="Commercial scaffold installation at BlueScope steel manufacturing facility" loading="lazy" width="1920" height="1440" /><div><h3>Prime Constructions for BlueScope</h3><p>Engineer-certified scaffolding design and installation at an Erskine Park steel manufacturing facility.</p><span>View project ↗</span></div></a>
-          <a href="/projects/royal-north-shore-hospital/"><img src="/projects/royal-north-shore.webp" alt="Scaffolding access project at Royal North Shore Hospital" loading="lazy" width="900" height="650" /><div><h3>Royal North Shore Hospital</h3><p>Professional access support planned around an active health infrastructure environment.</p><span>View project ↗</span></div></a>
+          <a href="/projects/prime-bluescope-erskine-park/"><ResponsiveImage src="/projects/prime-bluescope-erskine-park/IMG_6592.webp" alt="Commercial scaffold installation at BlueScope steel manufacturing facility" width={1920} height={2560} sizes="(max-width: 800px) calc(100vw - 28px), 50vw" /><div><h3>Prime Constructions for BlueScope</h3><p>Engineer-certified scaffolding design and installation at an Erskine Park steel manufacturing facility.</p><span>View project ↗</span></div></a>
+          <a href="/projects/royal-north-shore-hospital/"><ResponsiveImage src="/projects/royal-north-shore.webp" alt="Scaffolding access project at Royal North Shore Hospital" width={900} height={650} sizes="(max-width: 800px) calc(100vw - 28px), 50vw" /><div><h3>Royal North Shore Hospital</h3><p>Professional access support planned around an active health infrastructure environment.</p><span>View project ↗</span></div></a>
         </div>
         <p class="related-service">Need general equipment hire and installation? <a href="/services/scaffolding-hire-sydney/">Explore scaffolding hire Sydney ↗</a></p>
       </div>

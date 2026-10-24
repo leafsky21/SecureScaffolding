@@ -1,6 +1,12 @@
 ---
-import Base from '../../layouts/Base.astro'; import { projects } from '../../data/projects';
-export function getStaticPaths(){ return projects.map(project=>({params:{slug:project.slug},props:{project}})); }
+import Base from '../../layouts/Base.astro';
+import ResponsiveImage from '../../components/ResponsiveImage.astro';
+import { projects, projectUploadDates } from '../../data/projects';
+
+export function getStaticPaths() {
+  return projects.map(project => ({ params: { slug: project.slug }, props: { project } }));
+}
+
 const { project } = Astro.props;
 const siteUrl = 'https://www.securescaffolding.com.au';
 const pageUrl = new URL(`/projects/${project.slug}/`, siteUrl).toString();
@@ -8,6 +14,7 @@ const pageTitle = project.seoTitle ?? `${project.title} | Secure Scaffolding`;
 const pageDescription = project.seoDescription ?? `${project.title}: ${project.category} project supported by Secure Scaffolding in ${project.location}.`;
 const projectImages = (project.images ?? [project.image]).map(image => new URL(image, siteUrl).toString());
 const servicePageUrl = project.servicePage ? new URL(project.servicePage, siteUrl).toString() : undefined;
+const datePublished = projectUploadDates[project.slug];
 const projectSchema = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -25,6 +32,9 @@ const projectSchema = {
       description: pageDescription,
       image: projectImages,
       mainEntityOfPage: pageUrl,
+      datePublished,
+      articleSection: project.category,
+      keywords: project.services.join(', '),
       about: { '@type': 'Service', name: project.category, ...(servicePageUrl ? { url: servicePageUrl } : {}) },
       author: { '@id': `${siteUrl}/#business` },
       publisher: { '@id': `${siteUrl}/#business` }
@@ -32,4 +42,132 @@ const projectSchema = {
   ]
 };
 ---
-<Base title={pageTitle} description={pageDescription} image={project.image} type="article" jsonLd={projectSchema}><main><section class="project-hero"><div class="wrap project-hero-grid"><div><a class="eyebrow back-link" href="/projects/">← All projects</a><h1>{project.title}</h1><p class="project-meta">{project.location} · {project.category}</p><p class="lead">{project.description}</p><a class="btn btn-primary" href="/contact/">Discuss your project ↗</a></div><img src={project.image} alt={project.imageAlts?.[0] ?? project.title} /></div></section>{project.images && <section class="section" style="padding-bottom:0"><div class="wrap"><div class="section-head"><div><div class="eyebrow">Project gallery</div><h2>{project.galleryTitle ?? 'On-site access, up close.'}</h2></div></div><div class="detail-gallery">{project.images.map((image,index)=><img src={image} alt={project.imageAlts?.[index] ?? `${project.title} project photo ${index+1}`} loading={index>1?'lazy':undefined} />)}</div></div></section>}<section class="section"><div class="wrap split"><div><div class="eyebrow">Services delivered</div><h2>{project.servicesTitle ?? 'Access that keeps work moving.'}</h2></div><div><div class="list">{project.services.map((service,index)=><div class="list-row"><span style="color:#98ab22;font-weight:900">0{index+1}</span><strong>{service}</strong></div>)}</div>{project.servicePage && <a class="service-page-link" href={project.servicePage}>{project.serviceLinkLabel ?? 'Explore the related service'} ↗</a>}</div></div></section></main><style>.project-hero img{height:320px;max-height:320px}.projects-index-gallery{grid-template-columns:repeat(3,1fr);grid-auto-rows:190px}.projects-index-gallery figure{height:190px}.projects-index-gallery img{height:190px;max-height:190px}.detail-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.detail-gallery img{width:100%;height:220px;object-fit:cover;border-radius:14px}.detail-gallery img:first-child{grid-column:span 2;grid-row:span 2;height:454px}.service-page-link{display:inline-block;margin-top:24px;font-weight:900;color:#607300}@media(max-width:800px){.projects-index-gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}.projects-index-gallery figure,.projects-index-gallery img{height:170px;max-height:170px}.project-hero img{height:280px;max-height:280px}.detail-gallery{grid-template-columns:repeat(2,1fr)}.detail-gallery img:first-child{grid-column:span 2;grid-row:auto;height:300px}}@media(max-width:480px){.projects-index-gallery{grid-template-columns:1fr;grid-auto-rows:220px}.projects-index-gallery figure,.projects-index-gallery img{height:220px;max-height:220px}.project-hero img{height:240px;max-height:240px}.detail-gallery{display:block}.detail-gallery img,.detail-gallery img:first-child{height:250px;margin-bottom:14px}}</style></Base>
+
+<Base title={pageTitle} description={pageDescription} image={project.image} type="article" jsonLd={projectSchema}>
+  <main>
+    <section class="project-hero">
+      <div class="wrap project-hero-grid">
+        <div>
+          <a class="eyebrow back-link" href="/projects/">← All projects</a>
+          <h1>{project.title}</h1>
+          <p class="project-meta">{project.location} · {project.category}</p>
+          <p class="lead">{project.description}</p>
+          <dl class="project-facts">
+            <div><dt>Location</dt><dd>{project.location}</dd></div>
+            <div><dt>Project focus</dt><dd>{project.category}</dd></div>
+          </dl>
+          <a class="btn btn-primary" href="/contact/">Discuss your project ↗</a>
+        </div>
+        <ResponsiveImage
+          src={project.image}
+          alt={project.imageAlts?.[0] ?? project.title}
+          width={project.imageWidth}
+          height={project.imageHeight}
+          sizes="(max-width: 800px) calc(100vw - 28px), 50vw"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </section>
+
+    <section class="section case-study-section">
+      <div class="wrap">
+        <div class="section-head case-study-head">
+          <div>
+            <div class="eyebrow">Project case study</div>
+            <h2>What the project required—and how access was delivered.</h2>
+          </div>
+          <p class="lead">A concise record of the site conditions, the installed solution and the practical project outcome.</p>
+        </div>
+        <div class="case-study-grid">
+          {project.caseStudy.map((item, index) => (
+            <article class="case-study-card">
+              <span>0{index + 1}</span>
+              <div class="eyebrow">{item.label}</div>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {project.images && (
+      <section class="section gallery-section">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Project gallery</div>
+              <h2>{project.galleryTitle ?? 'On-site access, up close.'}</h2>
+            </div>
+          </div>
+          <div class="detail-gallery">
+            {project.images.map((image, index) => {
+              const dimensions = project.imageDimensions?.[index] ?? { width: project.imageWidth, height: project.imageHeight };
+              return (
+                <ResponsiveImage
+                  src={image}
+                  alt={project.imageAlts?.[index] ?? `${project.title} project photo ${index + 1}`}
+                  width={dimensions.width}
+                  height={dimensions.height}
+                  sizes={index === 0 ? '(max-width: 800px) calc(100vw - 28px), 50vw' : '(max-width: 480px) calc(100vw - 28px), (max-width: 800px) 50vw, 25vw'}
+                />
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <section class="section services-section">
+      <div class="wrap split">
+        <div>
+          <div class="eyebrow">Services delivered</div>
+          <h2>{project.servicesTitle ?? 'Access that keeps work moving.'}</h2>
+        </div>
+        <div>
+          <div class="list">
+            {project.services.map((service, index) => <div class="list-row"><span>0{index + 1}</span><strong>{service}</strong></div>)}
+          </div>
+          {project.servicePage && <a class="service-page-link" href={project.servicePage}>{project.serviceLinkLabel ?? 'Explore the related service'} ↗</a>}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .project-hero img{height:360px;max-height:360px}
+    .project-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 0 28px}
+    .project-facts div{padding:13px 0;border-top:1px solid #3b4145;min-width:0}
+    .project-facts dt{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#98a2a6;font-weight:800}
+    .project-facts dd{margin:5px 0 0;color:#fff;font-weight:800;overflow-wrap:anywhere}
+    .case-study-section{background:#fff}
+    .case-study-head .lead{max-width:390px;margin:0}
+    .case-study-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .case-study-card{position:relative;min-height:300px;padding:28px;border:1px solid var(--line);border-top:4px solid var(--lime);border-radius:18px;background:var(--paper)}
+    .case-study-card>span{display:block;margin-bottom:42px;color:#829400;font-size:1.2rem;font-weight:900}
+    .case-study-card h3{margin:10px 0 12px;font-size:1.35rem;line-height:1.15;letter-spacing:-.03em}
+    .case-study-card p{margin:0;color:var(--muted)}
+    .gallery-section{background:var(--paper)}
+    .detail-gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+    .detail-gallery img{width:100%;height:220px;object-fit:cover;border-radius:14px;background:#e6e9e4}
+    .detail-gallery img:first-child{grid-column:span 2;grid-row:span 2;height:454px}
+    .services-section{background:#fff}
+    .services-section .list-row span{color:#98ab22;font-weight:900}
+    .service-page-link{display:inline-block;margin-top:24px;font-weight:900;color:#607300}
+    @media(max-width:800px){
+      .project-hero img{height:300px;max-height:300px}
+      .case-study-grid{grid-template-columns:1fr}
+      .case-study-card{min-height:0}
+      .case-study-card>span{margin-bottom:26px}
+      .detail-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .detail-gallery img:first-child{grid-column:span 2;grid-row:auto;height:300px}
+    }
+    @media(max-width:480px){
+      .project-hero img{height:250px;max-height:250px}
+      .project-facts{grid-template-columns:1fr}
+      .detail-gallery{display:block}
+      .detail-gallery img,.detail-gallery img:first-child{height:250px;margin-bottom:14px}
+    }
+  </style>
+</Base>

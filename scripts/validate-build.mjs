@@ -46,6 +46,29 @@ for (const file of htmlFiles) {
     errors.push(`${file}: missing the canonical LocalBusiness entity`);
   }
 
+  const localImagePaths = new Set();
+  for (const match of html.matchAll(/<img\b[^>]*>/gi)) {
+    const imageTag = match[0];
+    if (!/\balt="[^"]*"/i.test(imageTag)) errors.push(`${file}: image is missing alt text`);
+    if (!/\bwidth="\d+"/i.test(imageTag) || !/\bheight="\d+"/i.test(imageTag)) {
+      errors.push(`${file}: image is missing intrinsic width or height`);
+    }
+    const src = imageTag.match(/\bsrc="(\/[^"?#]+)"/i)?.[1];
+    if (src) localImagePaths.add(src);
+    const srcset = imageTag.match(/\bsrcset="([^"]+)"/i)?.[1];
+    if (srcset) {
+      for (const candidate of srcset.split(',')) {
+        const candidatePath = candidate.trim().split(/\s+/)[0];
+        if (candidatePath.startsWith('/')) localImagePaths.add(candidatePath);
+      }
+    }
+  }
+  for (const imagePath of localImagePaths) {
+    const target = path.join(distDirectory, decodeURIComponent(imagePath).replace(/^\/+/, ''));
+    try { await fs.access(target); }
+    catch { errors.push(`${file}: missing image asset ${imagePath}`); }
+  }
+
   for (const match of html.matchAll(/href="(\/[^"#?]*)/g)) {
     const href = match[1];
     if (/\.[a-z0-9]+$/i.test(href)) continue;
@@ -80,4 +103,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Validated ${htmlFiles.length} pages: canonical URLs, internal links and JSON-LD are consistent.`);
+console.log(`Validated ${htmlFiles.length} pages: canonical URLs, internal links, image assets and JSON-LD are consistent.`);

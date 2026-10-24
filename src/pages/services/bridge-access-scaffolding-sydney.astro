@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import PageHeader from '../../components/PageHeader.astro';
 import GlobalCTA from '../../components/GlobalCTA.astro';
+import ResponsiveImage from '../../components/ResponsiveImage.astro';
 
 const siteUrl = 'https://www.securescaffolding.com.au';
 const pageUrl = `${siteUrl}/services/bridge-access-scaffolding-sydney/`;
@@ -50,7 +51,7 @@ const schema = {
 
     <section class="section service-intro" style="padding-top:0">
       <div class="wrap service-intro-grid">
-        <img src="/projects/hawkesbury-bridge.webp" alt="Bridge access scaffolding installed above water at Hawkesbury River Bridge" width="900" height="650" />
+        <ResponsiveImage src="/projects/hawkesbury-bridge.webp" alt="Bridge access scaffolding installed above water at Hawkesbury River Bridge" width={900} height={650} sizes="(max-width: 800px) calc(100vw - 28px), 55vw" loading="eager" fetchpriority="high" />
         <div>
           <div class="eyebrow">Access where ground support is limited</div>
           <h2>Practical access around difficult bridge structures.</h2>
@@ -90,11 +91,11 @@ const schema = {
         </div>
         <div class="project-grid">
           <article>
-            <img src="/projects/paterson-creek.webp" alt="Under-bridge scaffold access installed at Paterson Creek Bridge in NSW" loading="lazy" decoding="async" />
+            <ResponsiveImage src="/projects/paterson-creek.webp" alt="Under-bridge scaffold access installed at Paterson Creek Bridge in NSW" width={900} height={650} sizes="(max-width: 800px) calc(100vw - 28px), 50vw" />
             <div><h3>Paterson Creek Bridge</h3><p>Under-bridge scaffolding and working-platform access beneath and alongside the steel bridge structure.</p><a href="/projects/paterson-creek-bridge/">View project ↗</a></div>
           </article>
           <article>
-            <img src="/projects/hawkesbury-bridge.webp" alt="Underdeck bridge access scaffolding above water at Hawkesbury River Bridge" loading="lazy" decoding="async" />
+            <ResponsiveImage src="/projects/hawkesbury-bridge.webp" alt="Underdeck bridge access scaffolding above water at Hawkesbury River Bridge" width={900} height={650} sizes="(max-width: 800px) calc(100vw - 28px), 50vw" />
             <div><h3>Hawkesbury River Bridge</h3><p>Engineer-supported underdeck access above water for complex infrastructure work around the bridge structure.</p><a href="/projects/hawkesbury-river-bridge/">View project ↗</a></div>
           </article>
         </div>
