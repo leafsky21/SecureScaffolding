@@ -6,16 +6,16 @@ export const projects = [
     category: 'Under-bridge access scaffolding',
     seoTitle: 'Under-Bridge Scaffolding NSW | Paterson Creek Bridge',
     seoDescription: 'Specialist under-bridge scaffolding and working-platform access installed around Paterson Creek Bridge for safe, practical infrastructure access in NSW.',
-    image: '/projects/paterson-creek.jpg',
+    image: '/projects/paterson-creek.webp',
     imageAlts: ['Under-bridge scaffolding and working-platform access installed along Paterson Creek Bridge in NSW'],
-    servicePage: '/services/bridge-access-scaffolding-sydney',
+    servicePage: '/services/bridge-access-scaffolding-sydney/',
     serviceLinkLabel: 'Explore bridge access scaffolding',
     servicesTitle: 'Specialist access beneath and alongside bridge structures.',
     description: 'Secure Scaffolding supplied and installed specialist under-bridge scaffolding at Paterson Creek Bridge in NSW. The scaffold system created safe working-platform access beneath and alongside the steel bridge structure, supporting crews around difficult spans, piers and elevated work areas. This bridge access solution demonstrates our capability in complex infrastructure scaffolding where conventional ground-based access is limited.',
     services: ['Under-bridge scaffold access', 'Working-platform installation', 'Transport', 'Design support']
   },
-  { slug: 'barge-rozelle', title: 'Barge Rozelle', location: 'Rozelle, NSW', category: 'Marine and civil works', image: '/projects/barge-rozelle.jpg', description: 'Practical scaffold access for marine and civil works, helping crews work safely around complex structures and changing site conditions.', services: ['Scaffolding hire', 'Installation', 'Transport'] },
-  { slug: 'prospect', title: 'Prospect', location: 'Western Sydney', category: 'Residential and commercial', image: '/projects/prospect.jpg', description: 'Flexible access solutions for construction teams working across residential and commercial projects in Western Sydney.', services: ['Scaffolding hire', 'Installation', 'Labour'] },
+  { slug: 'barge-rozelle', title: 'Barge Rozelle', location: 'Rozelle, NSW', category: 'Marine and civil works', image: '/projects/barge-rozelle.webp', description: 'Practical scaffold access for marine and civil works, helping crews work safely around complex structures and changing site conditions.', services: ['Scaffolding hire', 'Installation', 'Transport'], servicePage: '/services/scaffolding-hire-sydney/', serviceLinkLabel: 'Explore scaffolding hire and installation' },
+  { slug: 'prospect', title: 'Prospect', location: 'Western Sydney', category: 'Residential and commercial', image: '/projects/prospect.webp', description: 'Flexible access solutions for construction teams working across residential and commercial projects in Western Sydney.', services: ['Scaffolding hire', 'Installation', 'Labour'], servicePage: '/services/scaffolding-hire-sydney/', serviceLinkLabel: 'Explore scaffolding hire and installation' },
   {
     slug: 'hawkesbury-river-bridge',
     title: 'Bridge Access Scaffolding — Hawkesbury River Bridge',
@@ -23,16 +23,16 @@ export const projects = [
     category: 'Bridge and infrastructure scaffolding',
     seoTitle: 'Bridge Access Scaffolding | Hawkesbury River Project',
     seoDescription: 'Engineered bridge access scaffolding above water for the Hawkesbury River Bridge, supporting safe underdeck access for complex infrastructure work.',
-    image: '/projects/hawkesbury-bridge.jpg',
+    image: '/projects/hawkesbury-bridge.webp',
     imageAlts: ['Underdeck bridge access scaffolding above water at Hawkesbury River Bridge in Sydney'],
-    servicePage: '/services/bridge-access-scaffolding-sydney',
+    servicePage: '/services/bridge-access-scaffolding-sydney/',
     serviceLinkLabel: 'Explore bridge access scaffolding',
     servicesTitle: 'Engineered access for complex bridge environments.',
     description: 'Secure Scaffolding delivered engineered bridge access scaffolding at Hawkesbury River Bridge in Sydney, creating safe underdeck access above water for complex infrastructure work. The specialist scaffold solution supported work around the bridge structure where standard ground-based access was not practical. Our scope included scaffold installation, transport and consulting engineering for a coordinated bridge-access solution.',
     services: ['Bridge access scaffolding', 'Underdeck access above water', 'Transport', 'Consulting engineering']
   },
-  { slug: 'scenic-world-katoomba', title: 'Scenic World Katoomba', location: 'Blue Mountains, NSW', category: 'Complex site access', image: '/projects/scenic-world.jpg', description: 'Carefully coordinated access for work in a complex, high-traffic Blue Mountains environment.', services: ['Scaffolding hire', 'Installation', 'Design support'] },
-  { slug: 'royal-north-shore-hospital', title: 'Royal North Shore Hospital', location: 'St Leonards, NSW', category: 'Health infrastructure', image: '/projects/royal-north-shore.jpg', description: 'Professional access support for health infrastructure projects, with planning that respects active operational environments.', services: ['Scaffolding hire', 'Installation', 'Transport'] },
+  { slug: 'scenic-world-katoomba', title: 'Scenic World Katoomba', location: 'Blue Mountains, NSW', category: 'Complex site access', image: '/projects/scenic-world.webp', description: 'Carefully coordinated access for work in a complex, high-traffic Blue Mountains environment.', services: ['Scaffolding hire', 'Installation', 'Design support'], servicePage: '/services/commercial-scaffolding-sydney/', serviceLinkLabel: 'Explore commercial scaffolding' },
+  { slug: 'royal-north-shore-hospital', title: 'Royal North Shore Hospital', location: 'St Leonards, NSW', category: 'Health infrastructure', image: '/projects/royal-north-shore.webp', description: 'Professional access support for health infrastructure projects, with planning that respects active operational environments.', services: ['Scaffolding hire', 'Installation', 'Transport'], servicePage: '/services/commercial-scaffolding-sydney/', serviceLinkLabel: 'Explore commercial scaffolding' },
   {
     slug: 'mount-st-benedict-college-public-stair-access',
     title: 'Premium Public Access Stairs — Mount St Benedict College',
@@ -40,14 +40,14 @@ export const projects = [
     category: 'Premium public access stairs',
     seoTitle: 'Public Access Stairs | Mount St Benedict College',
     seoDescription: 'Premium temporary public access stairs for schools and high-traffic sites in Sydney, with engineered landings, handrails, guardrails and slip-resistant surfaces.',
-    image: '/projects/mount-st-benedict-college/IMG_4220.jpeg',
+    image: '/projects/mount-st-benedict-college/IMG_4220.webp',
     images: [
-      '/projects/mount-st-benedict-college/IMG_4220.jpeg',
-      '/projects/mount-st-benedict-college/IMG_4243.jpeg',
-      '/projects/mount-st-benedict-college/IMG_4224.jpeg',
-      '/projects/mount-st-benedict-college/IMG_4223.jpeg',
-      '/projects/mount-st-benedict-college/IMG_4222.jpeg',
-      '/projects/mount-st-benedict-college/IMG_4226.jpeg'
+      '/projects/mount-st-benedict-college/IMG_4220.webp',
+      '/projects/mount-st-benedict-college/IMG_4243.webp',
+      '/projects/mount-st-benedict-college/IMG_4224.webp',
+      '/projects/mount-st-benedict-college/IMG_4223.webp',
+      '/projects/mount-st-benedict-college/IMG_4222.webp',
+      '/projects/mount-st-benedict-college/IMG_4226.webp'
     ],
     imageAlts: [
       'Premium temporary public access stairs installed on sloping grounds at Mount St Benedict College',
@@ -57,7 +57,7 @@ export const projects = [
       'Temporary pedestrian access landing connecting the school grounds to the public access stairs',
       'Engineered scaffold support beneath the temporary public access stair system'
     ],
-    servicePage: '/services/public-access-stairs-sydney',
+    servicePage: '/services/public-access-stairs-sydney/',
     serviceLinkLabel: 'Explore premium public access stairs',
     galleryTitle: 'Premium temporary public access stairs for schools.',
     servicesTitle: 'Purpose-built public access—not ordinary site stairs.',
@@ -71,23 +71,23 @@ export const projects = [
     category: 'Concrete slab and shaft edge protection',
     seoTitle: 'High-Rise Edge Protection Oran Park | Secure Scaffolding',
     seoDescription: 'High-rise temporary edge protection installed at Oran Park for concrete slab edges, shaft openings and exposed perimeters using modular mesh barriers.',
-    image: '/projects/oran-park-edge-protection/131.JPG',
+    image: '/projects/oran-park-edge-protection/131.webp',
     images: [
-      '/projects/oran-park-edge-protection/131.JPG',
-      '/projects/oran-park-edge-protection/IMG_4334.jpg'
+      '/projects/oran-park-edge-protection/131.webp',
+      '/projects/oran-park-edge-protection/IMG_4334.webp'
     ],
     imageAlts: [
       'Blue modular mesh edge-protection barrier clamped to the edge of a concrete slab at an Oran Park high-rise',
       'Temporary mesh edge-protection system surrounding a concrete slab and open shaft area at Oran Park'
     ],
-    servicePage: '/services/temporary-edge-protection-sydney',
+    servicePage: '/services/temporary-edge-protection-sydney/',
     serviceLinkLabel: 'Explore temporary edge protection',
     galleryTitle: 'Edge protection for concrete slabs and shaft openings.',
     servicesTitle: 'Temporary edge protection for exposed high-rise perimeters.',
     description: 'Secure Scaffolding supplied and installed a temporary edge protection system for a high-rise building project at Oran Park. The modular mesh barriers were mounted along exposed concrete slab edges, open shaft areas and other exposed perimeters, creating a robust physical barrier at fall edges while allowing construction activities to continue. The perimeter edge protection installation was configured to suit the project’s changing slab and shaft conditions.',
     services: ['Concrete slab edge protection', 'Shaft opening edge protection', 'High-rise perimeter barriers', 'Installation and adjustment']
   },
-  { slug: 'prime-bluescope-erskine-park', title: 'Prime Constructions for BlueScope', location: '25–55 Templar Road, Erskine Park NSW', category: 'Steel manufacturing facility', image: '/projects/prime-bluescope-erskine-park/IMG_6327.jpg', images: ['/projects/prime-bluescope-erskine-park/IMG_6327.jpg','/projects/prime-bluescope-erskine-park/IMG_6592.jpg','/projects/prime-bluescope-erskine-park/IMG_6597.jpg','/projects/prime-bluescope-erskine-park/IMG_6598.jpg','/projects/prime-bluescope-erskine-park/IMG_6599.jpg','/projects/prime-bluescope-erskine-park/IMG_6610.jpg','/projects/prime-bluescope-erskine-park/IMG_6611.jpg','/projects/prime-bluescope-erskine-park/IMG_6612.jpg'], description: 'Engineer-certified scaffolding design and installation services for Prime Constructions at the BlueScope steel factory at 25–55 Templar Road, Erskine Park.', services: ['Scaffolding design', 'Engineer-certified installation', 'Scaffolding hire', 'Transport'] }
+  { slug: 'prime-bluescope-erskine-park', title: 'Prime Constructions for BlueScope', location: '25–55 Templar Road, Erskine Park NSW', category: 'Steel manufacturing facility', image: '/projects/prime-bluescope-erskine-park/IMG_6327.webp', images: ['/projects/prime-bluescope-erskine-park/IMG_6327.webp','/projects/prime-bluescope-erskine-park/IMG_6592.webp','/projects/prime-bluescope-erskine-park/IMG_6597.webp','/projects/prime-bluescope-erskine-park/IMG_6598.webp','/projects/prime-bluescope-erskine-park/IMG_6599.webp','/projects/prime-bluescope-erskine-park/IMG_6610.webp','/projects/prime-bluescope-erskine-park/IMG_6611.webp','/projects/prime-bluescope-erskine-park/IMG_6612.webp'], description: 'Engineer-certified scaffolding design and installation services for Prime Constructions at the BlueScope steel factory at 25–55 Templar Road, Erskine Park.', services: ['Scaffolding design', 'Engineer-certified installation', 'Scaffolding hire', 'Transport'], servicePage: '/services/commercial-scaffolding-sydney/', serviceLinkLabel: 'Explore commercial scaffolding' }
 ];
 
 const uploadDates: Record<string, string> = {

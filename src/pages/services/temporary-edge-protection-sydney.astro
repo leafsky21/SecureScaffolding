@@ -4,7 +4,7 @@ import PageHeader from '../../components/PageHeader.astro';
 import GlobalCTA from '../../components/GlobalCTA.astro';
 
 const siteUrl = 'https://www.securescaffolding.com.au';
-const pageUrl = `${siteUrl}/services/temporary-edge-protection-sydney`;
+const pageUrl = `${siteUrl}/services/temporary-edge-protection-sydney/`;
 const title = 'Temporary Edge Protection Sydney | Secure Scaffolding';
 const description = 'Temporary edge protection systems for high-rise and commercial construction across Sydney and NSW, including concrete slab edges, shaft openings and perimeter barriers.';
 const schema = {
@@ -13,8 +13,8 @@ const schema = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
-        { '@type': 'ListItem', position: 2, name: 'Services', item: `${siteUrl}/services` },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: `${siteUrl}/services/` },
         { '@type': 'ListItem', position: 3, name: 'Temporary Edge Protection Sydney', item: pageUrl }
       ]
     },
@@ -36,14 +36,14 @@ const schema = {
       provider: {
         '@type': 'Organization',
         name: 'Secure Scaffolding',
-        url: siteUrl
+        url: `${siteUrl}/`
       }
     }
   ]
 };
 ---
 
-<Base title={title} description={description} current="services" image="/projects/oran-park-edge-protection/131.JPG" jsonLd={schema}>
+<Base title={title} description={description} current="services" image="/projects/oran-park-edge-protection/131.webp" jsonLd={schema}>
   <main>
     <PageHeader
       eyebrow="Temporary edge protection Sydney"
@@ -60,7 +60,7 @@ const schema = {
         <div>
           <p class="lead">Secure Scaffolding supplies and installs temporary edge protection systems for high-rise and commercial construction across Sydney and NSW. Our modular mesh barriers provide a physical barrier around exposed concrete slab edges, shaft openings and building perimeters while work continues.</p>
           <p>Each installation is planned around the supporting surface, connection points and changing site conditions, with adjustments coordinated as the build progresses.</p>
-          <a class="btn btn-dark" href="/contact">Discuss edge protection ↗</a>
+          <a class="btn btn-dark" href="/contact/">Discuss edge protection ↗</a>
         </div>
       </div>
     </section>
@@ -101,12 +101,12 @@ const schema = {
 
     <section class="section project-proof">
       <div class="wrap project-proof-grid">
-        <img src="/projects/oran-park-edge-protection/131.JPG" alt="Blue modular mesh edge-protection barrier clamped to a concrete slab edge at an Oran Park high-rise building" loading="lazy" />
+        <img src="/projects/oran-park-edge-protection/131.webp" alt="Blue modular mesh edge-protection barrier clamped to a concrete slab edge at an Oran Park high-rise building" loading="lazy" decoding="async" />
         <div>
           <div class="eyebrow">Recent project</div>
           <h2>High-Rise Edge Protection — Oran Park</h2>
           <p class="lead">Temporary mesh barriers installed along exposed concrete slab edges, shaft openings and high-rise perimeters at an Oran Park construction project.</p>
-          <a class="text-link" href="/projects/oran-park-high-rise-edge-protection">View the Oran Park edge-protection project ↗</a>
+          <a class="text-link" href="/projects/oran-park-high-rise-edge-protection/">View the Oran Park edge-protection project ↗</a>
         </div>
       </div>
     </section>

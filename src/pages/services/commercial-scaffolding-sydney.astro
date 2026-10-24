@@ -1,0 +1,115 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import GlobalCTA from '../../components/GlobalCTA.astro';
+
+const siteUrl = 'https://www.securescaffolding.com.au';
+const pageUrl = `${siteUrl}/services/commercial-scaffolding-sydney/`;
+const title = 'Commercial Scaffolding Sydney | Secure Scaffolding';
+const description = 'Commercial scaffolding across Sydney for builders, industrial facilities, health, infrastructure and complex construction sites, with design, hire and installation support.';
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: `${siteUrl}/services/` },
+        { '@type': 'ListItem', position: 3, name: 'Commercial Scaffolding Sydney', item: pageUrl }
+      ]
+    },
+    {
+      '@type': 'Service',
+      name: 'Commercial Scaffolding Sydney',
+      description,
+      url: pageUrl,
+      serviceType: ['Commercial scaffolding', 'Industrial scaffolding', 'Construction scaffolding', 'Engineer-certified scaffold design', 'Scaffolding installation'],
+      areaServed: [
+        { '@type': 'City', name: 'Sydney' },
+        { '@type': 'AdministrativeArea', name: 'New South Wales' }
+      ],
+      provider: { '@type': 'Organization', name: 'Secure Scaffolding Services Pty Ltd', url: `${siteUrl}/` }
+    }
+  ]
+};
+---
+
+<Base title={title} description={description} current="services" image="/projects/prime-bluescope-erskine-park/IMG_6327.webp" jsonLd={schema}>
+  <main>
+    <PageHeader
+      eyebrow="Commercial scaffolding Sydney"
+      title="Commercial scaffolding planned around your project."
+      intro="Scaffold hire, installation, transport and design support for commercial builders, industrial facilities and complex sites across Sydney and NSW."
+    />
+
+    <section class="section service-intro" style="padding-top:0">
+      <div class="wrap service-intro-grid">
+        <img src="/projects/prime-bluescope-erskine-park/IMG_6327.webp" alt="Commercial scaffolding installed at the BlueScope facility in Erskine Park" width="1920" height="1440" />
+        <div>
+          <div class="eyebrow">Builder-focused access planning</div>
+          <h2>Scaffolding that works with the construction sequence.</h2>
+          <p class="lead">Commercial scaffolding needs to support the work without becoming an obstacle to trades, logistics or the wider program. Secure Scaffolding plans the access around work fronts, building geometry and site constraints.</p>
+          <p>Our team can coordinate scaffold hire, installation, transport and engineer-supported design for new construction, upgrades, maintenance and complex access conditions.</p>
+          <a class="btn btn-dark" href="/contact/">Discuss your commercial project ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section feature-section">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Commercial capability</div><h2>Access for demanding project environments.</h2></div>
+          <p class="lead">A coordinated scaffolding service for builders and project teams managing multiple trades, changing work fronts and active sites.</p>
+        </div>
+        <div class="feature-grid">
+          <article><span>01</span><h3>Commercial construction</h3><p>Scaffold access for new builds, building upgrades, façade work and staged construction programs.</p></article>
+          <article><span>02</span><h3>Industrial facilities</h3><p>Access planned around operational constraints, structural conditions and the needs of specialist trades.</p></article>
+          <article><span>03</span><h3>Health and active sites</h3><p>Practical coordination for environments where construction activity must account for ongoing operations.</p></article>
+          <article><span>04</span><h3>Complex design support</h3><p>Engineer-certified scaffold design and practical access planning where standard configurations are not suitable.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section delivery-section">
+      <div class="wrap split">
+        <div><div class="eyebrow">How we work</div><h2>Clear coordination from scope to dismantle.</h2></div>
+        <div class="steps">
+          <div><strong>01</strong><p><b>Understand the site.</b> Review the work area, construction sequence, access constraints and required scaffold functions.</p></div>
+          <div><strong>02</strong><p><b>Plan the solution.</b> Coordinate equipment, logistics and design or engineering support where the conditions require it.</p></div>
+          <div><strong>03</strong><p><b>Install and support.</b> Deliver and install the scaffold, then coordinate adjustments and dismantling around the program.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section project-proof">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Commercial project experience</div><h2>Experience across industrial and active sites.</h2></div>
+          <p class="lead">Explore projects that show our commercial scaffolding, installation and design capability.</p>
+        </div>
+        <div class="project-grid">
+          <a href="/projects/prime-bluescope-erskine-park/"><img src="/projects/prime-bluescope-erskine-park/IMG_6592.webp" alt="Commercial scaffold installation at BlueScope steel manufacturing facility" loading="lazy" width="1920" height="1440" /><div><h3>Prime Constructions for BlueScope</h3><p>Engineer-certified scaffolding design and installation at an Erskine Park steel manufacturing facility.</p><span>View project ↗</span></div></a>
+          <a href="/projects/royal-north-shore-hospital/"><img src="/projects/royal-north-shore.webp" alt="Scaffolding access project at Royal North Shore Hospital" loading="lazy" width="900" height="650" /><div><h3>Royal North Shore Hospital</h3><p>Professional access support planned around an active health infrastructure environment.</p><span>View project ↗</span></div></a>
+        </div>
+        <p class="related-service">Need general equipment hire and installation? <a href="/services/scaffolding-hire-sydney/">Explore scaffolding hire Sydney ↗</a></p>
+      </div>
+    </section>
+
+    <div class="wrap"><GlobalCTA /></div>
+  </main>
+</Base>
+
+<style>
+  .service-intro-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);gap:clamp(30px,6vw,78px);align-items:center}
+  .service-intro-grid>*{min-width:0}.service-intro img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:20px}
+  .service-intro h2{font-size:clamp(2.3rem,4.5vw,4.5rem)}.service-intro p:not(.lead){color:var(--muted);margin:18px 0 28px}
+  .feature-section{background:#f0f2ed}.feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .feature-grid article{padding:28px;border:1px solid var(--line);border-radius:16px;background:#fff;border-top:3px solid #e4f04a}
+  .feature-grid span{color:#7d901b;font-weight:900}.feature-grid h3{font-size:1.35rem;letter-spacing:-.035em;margin:36px 0 10px}.feature-grid p{color:var(--muted);margin:0}
+  .steps{border-top:1px solid var(--line)}.steps>div{display:grid;grid-template-columns:50px 1fr;gap:12px;padding:18px 0;border-bottom:1px solid var(--line)}.steps strong{color:#7d901b}.steps p{margin:0;color:var(--muted)}.steps b{color:var(--ink)}
+  .project-proof{background:#f0f2ed}.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  .project-grid>a{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#fff}.project-grid img{display:block;width:100%;height:290px;object-fit:cover}.project-grid a>div{padding:24px}
+  .project-grid h3{font-size:1.4rem;letter-spacing:-.04em;margin:0 0 8px}.project-grid p{color:var(--muted);margin:0 0 18px}.project-grid span,.related-service a{font-weight:900;color:#607300}.related-service{margin:24px 0 0;color:var(--muted)}
+  @media(max-width:800px){.service-intro-grid,.project-grid{grid-template-columns:1fr}}
+  @media(max-width:560px){.feature-grid{grid-template-columns:1fr}.project-grid img{height:240px}}
+</style>

@@ -1,0 +1,118 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHeader from '../../components/PageHeader.astro';
+import GlobalCTA from '../../components/GlobalCTA.astro';
+
+const siteUrl = 'https://www.securescaffolding.com.au';
+const pageUrl = `${siteUrl}/services/scaffolding-hire-sydney/`;
+const title = 'Scaffolding Hire Sydney | Supply, Install & Dismantle';
+const description = 'Scaffolding hire across Sydney with delivery, professional installation, dismantling, transport and design support for commercial, civil and residential projects.';
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: `${siteUrl}/services/` },
+        { '@type': 'ListItem', position: 3, name: 'Scaffolding Hire Sydney', item: pageUrl }
+      ]
+    },
+    {
+      '@type': 'Service',
+      name: 'Scaffolding Hire Sydney',
+      description,
+      url: pageUrl,
+      serviceType: ['Scaffolding hire', 'Scaffolding installation', 'Scaffold dismantling', 'Scaffold transport', 'Scaffolding design support'],
+      areaServed: [
+        { '@type': 'City', name: 'Sydney' },
+        { '@type': 'AdministrativeArea', name: 'Central Coast' },
+        { '@type': 'AdministrativeArea', name: 'Newcastle' }
+      ],
+      provider: { '@type': 'Organization', name: 'Secure Scaffolding Services Pty Ltd', url: `${siteUrl}/` }
+    }
+  ]
+};
+---
+
+<Base title={title} description={description} current="services" image="/projects/prospect.webp" jsonLd={schema}>
+  <main>
+    <PageHeader
+      eyebrow="Scaffolding hire Sydney"
+      title="Scaffold hire, installation and dismantling for Sydney projects."
+      intro="Quality scaffold equipment, experienced installation crews and reliable transport coordinated around your site, scope and construction program."
+    />
+
+    <section class="section service-intro" style="padding-top:0">
+      <div class="wrap service-intro-grid">
+        <img src="/projects/prospect.webp" alt="Scaffolding installed for a construction project in Western Sydney" width="900" height="650" />
+        <div>
+          <div class="eyebrow">A complete hire service</div>
+          <h2>More than equipment delivered to the gate.</h2>
+          <p class="lead">Secure Scaffolding supplies, transports, installs and dismantles scaffold systems for builders, contractors and project teams across Greater Sydney, the Central Coast and Newcastle.</p>
+          <p>We plan the access around the work area, site conditions and construction sequence. Where a project requires a more complex solution, design and engineering support can be coordinated as part of the scaffolding scope.</p>
+          <a class="btn btn-dark" href="/contact/">Request a scaffolding hire quote ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section feature-section">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">What the service covers</div><h2>Coordinated from delivery to dismantle.</h2></div>
+          <p class="lead">A practical scaffold hire service for projects that need reliable equipment, experienced people and clear site coordination.</p>
+        </div>
+        <div class="feature-grid">
+          <article><span>01</span><h3>Scaffold supply and hire</h3><p>Quality scaffold components selected to suit the building, work area, access requirements and expected hire period.</p></article>
+          <article><span>02</span><h3>Professional installation</h3><p>Experienced scaffold crews install the system around your site conditions and coordinate with the project program.</p></article>
+          <article><span>03</span><h3>Transport and logistics</h3><p>Equipment delivery, collection and material movements planned around site access and construction sequencing.</p></article>
+          <article><span>04</span><h3>Adjustments and dismantling</h3><p>Scaffold changes and final dismantling coordinated as work fronts, building stages and access needs change.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sectors">
+      <div class="wrap split">
+        <div><div class="eyebrow">Projects we support</div><h2>Scaffolding for straightforward and complex sites.</h2></div>
+        <div>
+          <p class="lead">Our scaffolding hire service supports commercial construction, industrial facilities, civil and infrastructure work, residential projects and active operational environments.</p>
+          <div class="link-list">
+            <a href="/services/commercial-scaffolding-sydney/">Commercial scaffolding Sydney ↗</a>
+            <a href="/services/bridge-access-scaffolding-sydney/">Bridge access scaffolding ↗</a>
+            <a href="/services/public-access-stairs-sydney/">Premium public access stairs ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section project-proof">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Relevant projects</div><h2>Scaffold access delivered across NSW.</h2></div>
+          <p class="lead">See examples of our hire, installation and transport capability in different project environments.</p>
+        </div>
+        <div class="project-grid">
+          <a href="/projects/prospect/"><img src="/projects/prospect.webp" alt="Scaffold hire and installation project at Prospect in Western Sydney" loading="lazy" width="900" height="650" /><div><h3>Prospect</h3><p>Flexible scaffold access for residential and commercial construction in Western Sydney.</p><span>View project ↗</span></div></a>
+          <a href="/projects/barge-rozelle/"><img src="/projects/barge-rozelle.webp" alt="Scaffold access supplied for marine and civil work at Rozelle" loading="lazy" width="900" height="650" /><div><h3>Barge Rozelle</h3><p>Practical scaffold access, transport and installation for marine and civil works.</p><span>View project ↗</span></div></a>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap"><GlobalCTA /></div>
+  </main>
+</Base>
+
+<style>
+  .service-intro-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);gap:clamp(30px,6vw,78px);align-items:center}
+  .service-intro-grid>*{min-width:0}.service-intro img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:20px}
+  .service-intro h2{font-size:clamp(2.3rem,4.5vw,4.5rem)}.service-intro p:not(.lead){color:var(--muted);margin:18px 0 28px}
+  .feature-section{background:#f0f2ed}.feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .feature-grid article{padding:28px;border:1px solid var(--line);border-radius:16px;background:#fff;border-top:3px solid #e4f04a}
+  .feature-grid span{color:#7d901b;font-weight:900}.feature-grid h3{font-size:1.35rem;letter-spacing:-.035em;margin:36px 0 10px}.feature-grid p{color:var(--muted);margin:0}
+  .link-list{display:grid;border-top:1px solid var(--line);margin-top:26px}.link-list a{padding:15px 0;border-bottom:1px solid var(--line);font-weight:850;color:#607300}
+  .project-proof{background:#f0f2ed}.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+  .project-grid>a{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#fff}.project-grid img{display:block;width:100%;height:290px;object-fit:cover}.project-grid a>div{padding:24px}
+  .project-grid h3{font-size:1.4rem;letter-spacing:-.04em;margin:0 0 8px}.project-grid p{color:var(--muted);margin:0 0 18px}.project-grid span{font-weight:900;color:#607300}
+  @media(max-width:800px){.service-intro-grid,.project-grid{grid-template-columns:1fr}}
+  @media(max-width:560px){.feature-grid{grid-template-columns:1fr}.project-grid img{height:240px}}
+</style>

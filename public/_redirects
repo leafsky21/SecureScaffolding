@@ -1,2 +1,9 @@
 /home / 301
 /index.html / 301
+/about /about/ 301
+/services /services/ 301
+/projects /projects/ 301
+/clients /clients/ 301
+/contact /contact/ 301
+/services/:slug /services/:slug/ 301
+/projects/:slug /projects/:slug/ 301

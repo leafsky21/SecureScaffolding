@@ -4,7 +4,7 @@ import PageHeader from '../../components/PageHeader.astro';
 import GlobalCTA from '../../components/GlobalCTA.astro';
 
 const siteUrl = 'https://www.securescaffolding.com.au';
-const pageUrl = `${siteUrl}/services/bridge-access-scaffolding-sydney`;
+const pageUrl = `${siteUrl}/services/bridge-access-scaffolding-sydney/`;
 const title = 'Bridge Access Scaffolding Sydney | Secure Scaffolding';
 const description = 'Specialist bridge access scaffolding across Sydney and NSW, including under-bridge scaffolding, underdeck access, working platforms and access above water.';
 const schema = {
@@ -13,8 +13,8 @@ const schema = {
     {
       '@type': 'BreadcrumbList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
-        { '@type': 'ListItem', position: 2, name: 'Services', item: `${siteUrl}/services` },
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: `${siteUrl}/services/` },
         { '@type': 'ListItem', position: 3, name: 'Bridge Access Scaffolding Sydney', item: pageUrl }
       ]
     },
@@ -37,14 +37,14 @@ const schema = {
       provider: {
         '@type': 'Organization',
         name: 'Secure Scaffolding Services Pty Ltd',
-        url: siteUrl
+        url: `${siteUrl}/`
       }
     }
   ]
 };
 ---
 
-<Base title={title} description={description} current="services" image="/projects/hawkesbury-bridge.jpg" jsonLd={schema}>
+<Base title={title} description={description} current="services" image="/projects/hawkesbury-bridge.webp" jsonLd={schema}>
   <main>
     <PageHeader
       eyebrow="Bridge access scaffolding Sydney"
@@ -54,13 +54,13 @@ const schema = {
 
     <section class="section service-intro" style="padding-top:0">
       <div class="wrap service-intro-grid">
-        <img src="/projects/hawkesbury-bridge.jpg" alt="Bridge access scaffolding installed above water at Hawkesbury River Bridge" />
+        <img src="/projects/hawkesbury-bridge.webp" alt="Bridge access scaffolding installed above water at Hawkesbury River Bridge" width="900" height="650" />
         <div>
           <div class="eyebrow">Access where ground support is limited</div>
           <h2>Practical access around difficult bridge structures.</h2>
           <p class="lead">Bridge maintenance and inspection often require working access beneath decks, beside steelwork, around piers or above water. Secure Scaffolding develops bridge-access configurations around the structure, work area and available support conditions.</p>
           <p>Our scope can include scaffold hire, installation, transport, working platforms and engineer-supported access planning for complex civil and infrastructure environments.</p>
-          <a class="btn btn-dark" href="/contact">Discuss bridge access ↗</a>
+          <a class="btn btn-dark" href="/contact/">Discuss bridge access ↗</a>
         </div>
       </div>
     </section>
@@ -94,12 +94,12 @@ const schema = {
         </div>
         <div class="project-grid">
           <article>
-            <img src="/projects/paterson-creek.jpg" alt="Under-bridge scaffold access installed at Paterson Creek Bridge in NSW" loading="lazy" />
-            <div><h3>Paterson Creek Bridge</h3><p>Under-bridge scaffolding and working-platform access beneath and alongside the steel bridge structure.</p><a href="/projects/paterson-creek-bridge">View project ↗</a></div>
+            <img src="/projects/paterson-creek.webp" alt="Under-bridge scaffold access installed at Paterson Creek Bridge in NSW" loading="lazy" decoding="async" />
+            <div><h3>Paterson Creek Bridge</h3><p>Under-bridge scaffolding and working-platform access beneath and alongside the steel bridge structure.</p><a href="/projects/paterson-creek-bridge/">View project ↗</a></div>
           </article>
           <article>
-            <img src="/projects/hawkesbury-bridge.jpg" alt="Underdeck bridge access scaffolding above water at Hawkesbury River Bridge" loading="lazy" />
-            <div><h3>Hawkesbury River Bridge</h3><p>Engineer-supported underdeck access above water for complex infrastructure work around the bridge structure.</p><a href="/projects/hawkesbury-river-bridge">View project ↗</a></div>
+            <img src="/projects/hawkesbury-bridge.webp" alt="Underdeck bridge access scaffolding above water at Hawkesbury River Bridge" loading="lazy" decoding="async" />
+            <div><h3>Hawkesbury River Bridge</h3><p>Engineer-supported underdeck access above water for complex infrastructure work around the bridge structure.</p><a href="/projects/hawkesbury-river-bridge/">View project ↗</a></div>
           </article>
         </div>
       </div>
