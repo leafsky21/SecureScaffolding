@@ -36,6 +36,12 @@ for (const file of htmlFiles) {
   if (!title) errors.push(`${file}: missing title`); else titles.push(title);
   if (!description) errors.push(`${file}: missing meta description`); else descriptions.push(description);
   if (h1Count !== 1) errors.push(`${file}: expected one H1, found ${h1Count}`);
+  if (!html.includes('name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"')) {
+    errors.push(`${file}: missing search preview directives`);
+  }
+  if (!html.includes('hreflang="en-AU"') || !html.includes('hreflang="x-default"')) {
+    errors.push(`${file}: missing language alternates`);
+  }
 
   for (const match of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/gi)) {
     try { JSON.parse(match[1]); }
@@ -44,6 +50,12 @@ for (const file of htmlFiles) {
 
   if (!html.includes('https://www.securescaffolding.com.au/#business') || !html.includes('"@type":"LocalBusiness"')) {
     errors.push(`${file}: missing the canonical LocalBusiness entity`);
+  }
+  if (!html.includes('"@type":"WebPage"') || !html.includes('"isPartOf":{"@id":"https://www.securescaffolding.com.au/#website"}')) {
+    errors.push(`${file}: missing WebPage structured data`);
+  }
+  if (canonical?.match(/\/projects\/[^/]+\/$/) && !html.includes('property="article:published_time"')) {
+    errors.push(`${file}: project article is missing its published time`);
   }
 
   const localImagePaths = new Set();
@@ -86,12 +98,32 @@ for (const [label, values] of [['canonical URL', canonicals], ['title', titles],
 
 const sitemap = await fs.readFile(path.join(distDirectory, 'sitemap-0.xml'), 'utf8');
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
+if (!sitemap.includes('xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"')) {
+  errors.push('Sitemap is missing the image namespace');
+}
+for (const match of sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
+  const entry = match[1];
+  const location = entry.match(/<loc>([^<]+)<\/loc>/)?.[1];
+  if (!entry.includes('<lastmod>')) errors.push(`Sitemap entry is missing lastmod: ${location ?? 'unknown URL'}`);
+  if (location?.match(/\/projects\/[^/]+\/$/) && !entry.includes('<image:image>')) {
+    errors.push(`Project sitemap entry is missing images: ${location}`);
+  }
+  for (const imageMatch of entry.matchAll(/<image:loc>([^<]+)<\/image:loc>/g)) {
+    const imageUrl = new URL(imageMatch[1]);
+    const imagePath = path.join(distDirectory, decodeURIComponent(imageUrl.pathname).replace(/^\/+/, ''));
+    try { await fs.access(imagePath); }
+    catch { errors.push(`Sitemap references a missing image: ${imageMatch[1]}`); }
+  }
+}
 for (const canonical of canonicals) {
   if (!sitemapUrls.includes(canonical)) errors.push(`Canonical missing from sitemap: ${canonical}`);
 }
 for (const sitemapUrl of sitemapUrls) {
   if (!canonicals.includes(sitemapUrl)) errors.push(`Sitemap URL has no generated page: ${sitemapUrl}`);
 }
+
+const sitemapIndex = await fs.readFile(path.join(distDirectory, 'sitemap-index.xml'), 'utf8');
+if (!sitemapIndex.includes('<lastmod>')) errors.push('Sitemap index is missing lastmod');
 
 const redirects = await fs.readFile(path.join(distDirectory, '_redirects'), 'utf8');
 if (/^\/projects\/:|^\/services\/:/m.test(redirects)) {

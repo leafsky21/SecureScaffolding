@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import ProjectGallery from '../components/ProjectGallery.astro';
+import ResponsiveImage from '../components/ResponsiveImage.astro';
 
 const description = 'Sydney scaffolding hire, installation, engineer-certified design and transport for commercial, civil, infrastructure and residential projects across NSW.';
 ---
@@ -10,6 +11,8 @@ const description = 'Sydney scaffolding hire, installation, engineer-certified d
   description={description}
   current="home"
   image="/projects/paterson-creek.webp"
+  imageWidth={900}
+  imageHeight={650}
 >
   <main>
     <section class="hero">
@@ -23,7 +26,9 @@ const description = 'Sydney scaffolding hire, installation, engineer-certified d
             <a class="btn" style="color:#fff;border-color:#596166" href="/services/">Explore scaffolding services</a>
           </div>
         </div>
-        <div class="hero-art" role="img" aria-label="Specialist scaffolding installed beneath a bridge in New South Wales"></div>
+        <div class="hero-art">
+          <ResponsiveImage src="/projects/paterson-creek.webp" alt="Specialist scaffolding installed beneath a bridge in New South Wales" width={900} height={650} sizes="(max-width: 800px) calc(100vw - 28px), 46vw" loading="eager" fetchpriority="high" />
+        </div>
       </div>
     </section>
 

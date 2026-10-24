@@ -43,7 +43,7 @@ const projectSchema = {
 };
 ---
 
-<Base title={pageTitle} description={pageDescription} image={project.image} type="article" jsonLd={projectSchema}>
+<Base title={pageTitle} description={pageDescription} image={project.image} imageWidth={project.imageWidth} imageHeight={project.imageHeight} type="article" publishedTime={datePublished} jsonLd={projectSchema}>
   <main>
     <section class="project-hero">
       <div class="wrap project-hero-grid">
