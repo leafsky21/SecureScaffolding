@@ -66,6 +66,11 @@ for (const sitemapUrl of sitemapUrls) {
   if (!canonicals.includes(sitemapUrl)) errors.push(`Sitemap URL has no generated page: ${sitemapUrl}`);
 }
 
+const redirects = await fs.readFile(path.join(distDirectory, '_redirects'), 'utf8');
+if (/^\/projects\/:|^\/services\/:/m.test(redirects)) {
+  errors.push('Broad project or service redirects can capture static assets; use exact page redirects.');
+}
+
 if (errors.length) {
   console.error(errors.join('\n'));
   process.exit(1);
