@@ -9,7 +9,12 @@ export const projects = [
     image: '/projects/paterson-creek.webp',
     imageWidth: 900,
     imageHeight: 650,
-    imageAlts: ['Under-bridge scaffolding and working-platform access installed along Paterson Creek Bridge in NSW'],
+    images: ['/projects/paterson-creek.webp', '/projects/paterson-creek-bridge-panorama.webp'],
+    imageDimensions: [{ width: 900, height: 650 }, { width: 1705, height: 502 }],
+    imageAlts: [
+      'Under-bridge scaffolding and working-platform access installed along Paterson Creek Bridge in NSW',
+      'Panoramic view of suspended scaffolding and working platforms beneath Paterson Creek Bridge above the water'
+    ],
     servicePage: '/services/bridge-access-scaffolding-sydney/',
     serviceLinkLabel: 'Explore bridge access scaffolding',
     servicesTitle: 'Specialist access beneath and alongside bridge structures.',
