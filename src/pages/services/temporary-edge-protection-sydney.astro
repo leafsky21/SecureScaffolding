@@ -98,7 +98,7 @@ const schema = {
 
     <section class="section project-proof">
       <div class="wrap project-proof-grid">
-        <ResponsiveImage src="/projects/oran-park-edge-protection/131.webp" alt="Blue modular mesh edge-protection barrier clamped to a concrete slab edge at an Oran Park high-rise building" width={1280} height={1707} sizes="(max-width: 800px) calc(100vw - 28px), 55vw" />
+        <ResponsiveImage maxHeight={420} src="/projects/oran-park-edge-protection/131.webp" alt="Blue modular mesh edge-protection barrier clamped to a concrete slab edge at an Oran Park high-rise building" width={1280} height={1707} sizes="(max-width: 480px) calc(100vw - 28px), 560px" />
         <div>
           <div class="eyebrow">Recent project</div>
           <h2>High-Rise Edge Protection — Oran Park</h2>
@@ -121,7 +121,7 @@ const schema = {
   .edge-grid h3{font-size:1.35rem;letter-spacing:-.035em;margin:38px 0 10px}
   .edge-grid p{color:var(--muted);margin:0;max-width:48ch}
   .project-proof-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.75fr);gap:clamp(28px,6vw,80px);align-items:center}
-  .project-proof img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:18px}
+  .project-proof :global(img){display:block;width:auto;max-width:100%;height:auto;max-height:420px;margin-inline:auto;justify-self:center;border-radius:20px}
   .project-proof h2{margin:12px 0 18px}
   .text-link{display:inline-block;margin-top:10px;font-weight:900;color:#607300}
   @media(max-width:800px){

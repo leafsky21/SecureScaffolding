@@ -46,7 +46,7 @@ const schema = {
 
     <section class="section service-intro" style="padding-top:0">
       <div class="wrap service-intro-grid">
-        <ResponsiveImage src="/projects/prospect.webp" alt="Scaffolding installed for a construction project in Western Sydney" width={900} height={650} sizes="(max-width: 800px) calc(100vw - 28px), 55vw" loading="eager" fetchpriority="high" />
+        <ResponsiveImage maxHeight={420} src="/projects/prospect.webp" alt="Scaffolding installed for a construction project in Western Sydney" width={900} height={650} sizes="(max-width: 480px) calc(100vw - 28px), 560px" loading="eager" fetchpriority="high" />
         <div>
           <div class="eyebrow">A complete hire service</div>
           <h2>More than equipment delivered to the gate.</h2>
@@ -93,8 +93,8 @@ const schema = {
           <p class="lead">See examples of our hire, installation and transport capability in different project environments.</p>
         </div>
         <div class="project-grid">
-          <a href="/projects/prospect/"><ResponsiveImage src="/projects/prospect.webp" alt="Scaffold hire and installation project at Prospect in Western Sydney" width={900} height={650} sizes="(max-width: 800px) calc(100vw - 28px), 50vw" /><div><h3>Prospect</h3><p>Flexible scaffold access for residential and commercial construction in Western Sydney.</p><span>View project ↗</span></div></a>
-          <a href="/projects/barge-rozelle/"><ResponsiveImage src="/projects/barge-rozelle.webp" alt="Scaffold access supplied for marine and civil work at Rozelle" width={900} height={650} sizes="(max-width: 800px) calc(100vw - 28px), 50vw" /><div><h3>Barge Rozelle</h3><p>Practical scaffold access, transport and installation for marine and civil works.</p><span>View project ↗</span></div></a>
+          <a href="/projects/prospect/"><ResponsiveImage maxHeight={280} src="/projects/prospect.webp" alt="Scaffold hire and installation project at Prospect in Western Sydney" width={900} height={650} sizes="(max-width: 480px) calc(100vw - 28px), 560px" /><div><h3>Prospect</h3><p>Flexible scaffold access for residential and commercial construction in Western Sydney.</p><span>View project ↗</span></div></a>
+          <a href="/projects/barge-rozelle/"><ResponsiveImage maxHeight={280} src="/projects/barge-rozelle.webp" alt="Scaffold access supplied for marine and civil work at Rozelle" width={900} height={650} sizes="(max-width: 480px) calc(100vw - 28px), 560px" /><div><h3>Barge Rozelle</h3><p>Practical scaffold access, transport and installation for marine and civil works.</p><span>View project ↗</span></div></a>
         </div>
       </div>
     </section>
@@ -105,15 +105,15 @@ const schema = {
 
 <style>
   .service-intro-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);gap:clamp(30px,6vw,78px);align-items:center}
-  .service-intro-grid>*{min-width:0}.service-intro img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:20px}
+  .service-intro-grid>*{min-width:0}.service-intro :global(img){display:block;width:auto;max-width:100%;height:auto;max-height:420px;margin-inline:auto;justify-self:center;border-radius:20px}
   .service-intro h2{font-size:clamp(2.3rem,4.5vw,4.5rem)}.service-intro p:not(.lead){color:var(--muted);margin:18px 0 28px}
   .feature-section{background:#f0f2ed}.feature-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
   .feature-grid article{padding:28px;border:1px solid var(--line);border-radius:16px;background:#fff;border-top:3px solid #e4f04a}
   .feature-grid span{color:#7d901b;font-weight:900}.feature-grid h3{font-size:1.35rem;letter-spacing:-.035em;margin:36px 0 10px}.feature-grid p{color:var(--muted);margin:0}
   .link-list{display:grid;border-top:1px solid var(--line);margin-top:26px}.link-list a{padding:15px 0;border-bottom:1px solid var(--line);font-weight:850;color:#607300}
   .project-proof{background:#f0f2ed}.project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-  .project-grid>a{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#fff}.project-grid img{display:block;width:100%;height:290px;object-fit:cover}.project-grid a>div{padding:24px}
+  .project-grid>a{overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#fff}.project-grid :global(img){display:block;width:auto;max-width:100%;height:auto;max-height:280px;margin-inline:auto;justify-self:center;border-radius:16px}.project-grid a>div{padding:24px}
   .project-grid h3{font-size:1.4rem;letter-spacing:-.04em;margin:0 0 8px}.project-grid p{color:var(--muted);margin:0 0 18px}.project-grid span{font-weight:900;color:#607300}
   @media(max-width:800px){.service-intro-grid,.project-grid{grid-template-columns:1fr}}
-  @media(max-width:560px){.feature-grid{grid-template-columns:1fr}.project-grid img{height:240px}}
+  @media(max-width:560px){.feature-grid{grid-template-columns:1fr}}
 </style>

@@ -8,6 +8,7 @@ const {
   loading = 'lazy',
   decoding = 'async',
   fetchpriority,
+  maxHeight,
   class: className,
   ...attributes
 } = Astro.props;
@@ -32,5 +33,6 @@ const srcset = [
   decoding={decoding}
   fetchpriority={fetchpriority}
   class={className}
+  style={maxHeight ? `width:100%;max-width:min(100%, ${maxHeight * width / height}px);height:auto` : undefined}
   {...attributes}
 />

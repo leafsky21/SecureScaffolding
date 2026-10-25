@@ -51,7 +51,7 @@ const schema = {
 
     <section class="section service-intro" style="padding-top:0">
       <div class="wrap service-intro-grid">
-        <ResponsiveImage src="/projects/hawkesbury-bridge.webp" alt="Bridge access scaffolding installed above water at Hawkesbury River Bridge" width={900} height={650} sizes="(max-width: 800px) calc(100vw - 28px), 55vw" loading="eager" fetchpriority="high" />
+        <ResponsiveImage maxHeight={420} src="/projects/hawkesbury-bridge.webp" alt="Bridge access scaffolding installed above water at Hawkesbury River Bridge" width={900} height={650} sizes="(max-width: 480px) calc(100vw - 28px), 560px" loading="eager" fetchpriority="high" />
         <div>
           <div class="eyebrow">Access where ground support is limited</div>
           <h2>Practical access around difficult bridge structures.</h2>
@@ -91,11 +91,11 @@ const schema = {
         </div>
         <div class="project-grid">
           <article>
-            <ResponsiveImage src="/projects/paterson-creek.webp" alt="Under-bridge scaffold access installed at Paterson Creek Bridge in NSW" width={900} height={650} sizes="(max-width: 800px) calc(100vw - 28px), 50vw" />
+            <ResponsiveImage maxHeight={280} src="/projects/paterson-creek.webp" alt="Under-bridge scaffold access installed at Paterson Creek Bridge in NSW" width={900} height={650} sizes="(max-width: 480px) calc(100vw - 28px), 560px" />
             <div><h3>Paterson Creek Bridge</h3><p>Under-bridge scaffolding and working-platform access beneath and alongside the steel bridge structure.</p><a href="/projects/paterson-creek-bridge/">View project ↗</a></div>
           </article>
           <article>
-            <ResponsiveImage src="/projects/hawkesbury-bridge.webp" alt="Underdeck bridge access scaffolding above water at Hawkesbury River Bridge" width={900} height={650} sizes="(max-width: 800px) calc(100vw - 28px), 50vw" />
+            <ResponsiveImage maxHeight={280} src="/projects/hawkesbury-bridge.webp" alt="Underdeck bridge access scaffolding above water at Hawkesbury River Bridge" width={900} height={650} sizes="(max-width: 480px) calc(100vw - 28px), 560px" />
             <div><h3>Hawkesbury River Bridge</h3><p>Engineer-supported underdeck access above water for complex infrastructure work around the bridge structure.</p><a href="/projects/hawkesbury-river-bridge/">View project ↗</a></div>
           </article>
         </div>
@@ -109,7 +109,7 @@ const schema = {
 <style>
   .service-intro-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);gap:clamp(30px,6vw,78px);align-items:center}
   .service-intro-grid>*{min-width:0}
-  .service-intro img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:20px}
+  .service-intro :global(img){display:block;width:auto;max-width:100%;height:auto;max-height:420px;margin-inline:auto;justify-self:center;border-radius:20px}
   .service-intro h2{font-size:clamp(2.3rem,4.5vw,4.5rem)}
   .service-intro p:not(.lead){color:var(--muted);margin:18px 0 28px}
   .feature-section{background:#f0f2ed}
@@ -120,7 +120,7 @@ const schema = {
   .feature-grid p{color:var(--muted);margin:0}
   .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
   .project-grid article{min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:18px;background:#fff}
-  .project-grid img{display:block;width:100%;height:310px;object-fit:cover}
+  .project-grid :global(img){display:block;width:auto;max-width:100%;height:auto;max-height:280px;margin-inline:auto;justify-self:center;border-radius:16px}
   .project-grid article>div{padding:26px}
   .project-grid h3{font-size:1.45rem;letter-spacing:-.04em;margin:0 0 10px}
   .project-grid p{color:var(--muted);margin:0 0 20px}
@@ -130,6 +130,6 @@ const schema = {
   }
   @media(max-width:560px){
     .feature-grid{grid-template-columns:1fr}
-    .project-grid img{height:260px}
+
   }
 </style>
