@@ -260,3 +260,9 @@ export const projectUploadDates: Record<string, string> = {
 };
 
 export const sortedProjects = [...projects].sort((a, b) => new Date(projectUploadDates[b.slug]).getTime() - new Date(projectUploadDates[a.slug]).getTime());
+
+// Keep Oran Park directly after BlueScope in both project listings.
+const oranParkIndex = sortedProjects.findIndex(project => project.slug === 'oran-park-high-rise-edge-protection');
+const [oranPark] = sortedProjects.splice(oranParkIndex, 1);
+const bluescopeIndex = sortedProjects.findIndex(project => project.slug === 'prime-bluescope-erskine-park');
+sortedProjects.splice(bluescopeIndex + 1, 0, oranPark);
