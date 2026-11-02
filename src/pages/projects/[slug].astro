@@ -141,6 +141,12 @@ const projectSchema = {
   </main>
 
   <style>
+    .project-hero{padding:76px 0;background:var(--ink);color:#fff}
+    .project-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+    .project-hero h1{font-size:clamp(2rem,3.8vw,3rem);line-height:1.12;letter-spacing:-.025em;margin:18px 0}
+    .project-hero .lead{color:#c8ced0;margin:24px 0 30px}
+    .project-meta{color:var(--lime);font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:.8rem}
+    .back-link{color:var(--lime)}
     .project-hero-media{display:grid;place-items:center;min-width:0}
     .project-hero-media :global(img){display:block;width:auto;max-width:100%;height:auto;max-height:560px;object-fit:contain;border-radius:22px;box-shadow:16px 16px 0 #31363a}
     .project-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 0 28px}
@@ -163,6 +169,7 @@ const projectSchema = {
     .services-section .list-row span{color:#98ab22;font-weight:900}
     .service-page-link{display:inline-block;margin-top:24px;font-weight:900;color:#607300}
     @media(max-width:800px){
+      .project-hero-grid{grid-template-columns:1fr;gap:38px}
       .project-hero-media :global(img){max-height:540px;box-shadow:10px 10px 0 #31363a}
       .case-study-grid{grid-template-columns:1fr}
       .case-study-card{min-height:0}
