@@ -33,8 +33,16 @@ for (const file of htmlFiles) {
   const title = html.match(/<title>([^<]+)<\/title>/i)?.[1];
   const description = html.match(/<meta name="description" content="([^"]+)"/i)?.[1];
   const h1Count = [...html.matchAll(/<h1(?:\s|>)/gi)].length;
-  if (!title) errors.push(`${file}: missing title`); else titles.push(title);
-  if (!description) errors.push(`${file}: missing meta description`); else descriptions.push(description);
+  if (!title) errors.push(`${file}: missing title`);
+  else {
+    titles.push(title);
+    if (title.length < 30 || title.length > 70) errors.push(`${file}: title length is ${title.length}; expected 30–70 characters`);
+  }
+  if (!description) errors.push(`${file}: missing meta description`);
+  else {
+    descriptions.push(description);
+    if (description.length < 110 || description.length > 180) errors.push(`${file}: meta description length is ${description.length}; expected 110–180 characters`);
+  }
   if (h1Count !== 1) errors.push(`${file}: expected one H1, found ${h1Count}`);
   if (!html.includes('name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"')) {
     errors.push(`${file}: missing search preview directives`);
@@ -124,6 +132,16 @@ for (const sitemapUrl of sitemapUrls) {
 
 const sitemapIndex = await fs.readFile(path.join(distDirectory, 'sitemap-index.xml'), 'utf8');
 if (!sitemapIndex.includes('<lastmod>')) errors.push('Sitemap index is missing lastmod');
+const standardSitemap = await fs.readFile(path.join(distDirectory, 'sitemap.xml'), 'utf8');
+if (standardSitemap !== sitemapIndex) errors.push('Standard sitemap.xml does not match sitemap-index.xml');
+const robots = await fs.readFile(path.join(distDirectory, 'robots.txt'), 'utf8');
+if (!robots.includes('Sitemap: https://www.securescaffolding.com.au/sitemap.xml')) {
+  errors.push('robots.txt does not reference the standard sitemap URL');
+}
+const expectedLastModified = new Date().toISOString().slice(0, 10);
+if (!sitemapIndex.includes(`<lastmod>${expectedLastModified}</lastmod>`)) {
+  errors.push(`Sitemap index lastmod is not current: expected ${expectedLastModified}`);
+}
 
 const redirects = await fs.readFile(path.join(distDirectory, '_redirects'), 'utf8');
 if (/^\/projects\/:|^\/services\/:/m.test(redirects)) {
